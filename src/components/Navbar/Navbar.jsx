@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
+import "./Navbar.css";
 
 const Navbar = () => {
 
@@ -25,7 +26,7 @@ const Navbar = () => {
 
 
     return (
-        <div className="container mx-auto">
+        <div className="container mx-auto z-50 text-white">
             <nav className="navbar">
             <div className="navbar-start">
                 <div className="dropdown">
