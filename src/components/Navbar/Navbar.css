@@ -1,4 +1,13 @@
 .active {
-    background-color: wheat !important;
-    color: black !important;
+    background-color: #db332a95 !important;
+    color: white !important;
+}
+
+.menu li a {
+    color: white !important;
+}
+
+.menu li a:hover  {
+    background-color: transparent !important;
+    color: white !important;
 }
