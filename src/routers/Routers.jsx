@@ -3,12 +3,12 @@ import Login from "../pages/Login/Login";
 import Registration from "../pages/Registration/Registration";
 import Home from "../pages/Home/Home";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
-import MainLayout from "../layout/MainLayout/MainLayout";
 import WorkShops from "../pages/WorkShops/WorkShops";
 import Webinars from "../pages/Webinars/Webinars";
 import CareerFairs from "../pages/CareerFairs/CareerFairs";
 import Blogs from "../pages/Blogs/Blogs";
 import ContactUs from "../pages/ContactUs/ContactUs";
+import MainLayout from "../layout/MainLayout";
 
 const routes = createBrowserRouter([
     {
