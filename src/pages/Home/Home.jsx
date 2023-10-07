@@ -63,7 +63,8 @@ const Home = () => {
             <div className='w-[100vw] mx-auto'>
                 <Services></Services>
             </div>
-            <div>
+
+            <div className='w-[100vw] mx-auto'>
                 <Testimonials></Testimonials>
             </div>
             <Footer></Footer>
