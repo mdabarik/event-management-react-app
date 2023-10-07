@@ -15,44 +15,50 @@ import WorkshopBanner from '../../components/WorkshopBanner/WorkshopBanner';
 import ContactUsBanner from '../../components/ContactUsBanner/ContactUsBanner';
 import BlogBanner from '../../components/BlogBanner/BlogBanner';
 import CareerFairBanner from '../../components/CareerFairBanner/CareerFairBanner';
+import UpcomingEvents from '../../components/UpcomingEvents/UpcomingEvents';
 
 
 const Home = () => {
     return (
-        <div className='w-[100vw] h-[85vh] absolute top-0 left-0 -z-10'>
-            <Swiper
-                loop={true}
-                spaceBetween={30}
-                centeredSlides={true}
-                autoplay= {{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                    pauseOnMouseEnter: true,
-                }}
-                pagination={{
-                    clickable: true,
-                }}
-                navigation={true}
-                modules={[Autoplay, Pagination, Navigation]}
-                className="mySwiper"
+        <>
+            <div className='w-[100vw] h-[85vh] absolute top-0 left-0 -z-10'>
+                <Swiper
+                    loop={true}
+                    spaceBetween={30}
+                    centeredSlides={true}
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true,
+                    }}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    navigation={true}
+                    modules={[Autoplay, Pagination, Navigation]}
+                    className="mySwiper"
                 >
-                <SwiperSlide>
-                    <WorkshopBanner image={workshopBg}></WorkshopBanner>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <WebinarBanner image={webinarBg}></WebinarBanner>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <CareerFairBanner></CareerFairBanner>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <BlogBanner></BlogBanner>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <ContactUsBanner></ContactUsBanner>
-                </SwiperSlide>
-            </Swiper>
-        </div>
+                    <SwiperSlide>
+                        <WorkshopBanner image={workshopBg}></WorkshopBanner>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <WebinarBanner image={webinarBg}></WebinarBanner>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <CareerFairBanner></CareerFairBanner>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <BlogBanner></BlogBanner>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <ContactUsBanner></ContactUsBanner>
+                    </SwiperSlide>
+                </Swiper>
+            </div>
+            <div className='mt-[88vh]'>
+                <UpcomingEvents></UpcomingEvents>
+            </div>
+        </>
     )
 };
 
