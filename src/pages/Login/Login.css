@@ -1,0 +1,6 @@
+input::-webkit-input-placeholder{
+    color:black;
+}
+input:-moz-placeholder {
+    color:black;
+}
