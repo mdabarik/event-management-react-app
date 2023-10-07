@@ -4,11 +4,20 @@ import { Link } from "react-router-dom";
 import { FcGoogle } from 'react-icons/fc';
 import { useContext, useState } from "react";
 import { FirebaseAuthContext } from "../../providers/FirebaseAuthProvider";
-import { sendEmailVerification } from "firebase/auth";
+import { sendEmailVerification, updateProfile } from "firebase/auth";
+import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
+import { storage } from "../../firebase/firebase.config";
 
 const Registration = () => {
     const [errorMessage, setErrorMessage] = useState("");
-    const { createUserNormal } = useContext(FirebaseAuthContext);
+    const { createUserNormal, profilePhotoHandler } = useContext(FirebaseAuthContext);
+    const [file, setFile] = useState(null);
+    const [url, setURL] = useState("");
+
+    const handleChange = (e) => {
+        if (e.target.files[0])
+            setFile(e.target.files[0]);
+    }
 
     const handleRegistration = (e) => {
         e.preventDefault();
@@ -39,33 +48,88 @@ const Registration = () => {
             return;
         }
 
-        try {
-            createUserNormal(email, password)
-                .then(userCredential => {
-                    const user = userCredential.user;
-                    console.log(user);
-                    
-                    // sendEmailVerification(user)
-                    //     .then(response => {
-                    //         console.log(response);
-                    //         // send toast message
-                    //         alert("Account Created. Check email for verification.");
-                    //     })
-                    //     .catch(error => {
-                    //         console.log(error.message);
-                    //     })
-                    
-                })
-                .catch(error => {
-                    const errorCode = error.code;
-                    const errorMessage = error.message;
-                    setErrorMessage(errorMessage)
-                    console.log(errorCode, errorMessage);
-                })
-        } catch (e) {
-            console.log(e);
-        }
+        // save image to firebase and store the url on state url
+        // start 
+        const metadata = {
+            contentType: 'image/jpeg'
+        };
 
+        // Upload file and metadata to the object 'images/mountains.jpg'
+        const storageRef = ref(storage, 'images/' + file.name);
+        const uploadTask = uploadBytesResumable(storageRef, file, metadata);
+
+        // Listen for state changes, errors, and completion of the upload.
+        uploadTask.on('state_changed',
+            (snapshot) => {
+                // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+                const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                console.log('Upload is ' + progress + '% done');
+                switch (snapshot.state) {
+                    case 'paused':
+                        console.log('Upload is paused');
+                        break;
+                    case 'running':
+                        console.log('Upload is running');
+                        break;
+                }
+            },
+            (error) => {
+                // A full list of error codes is available at
+                // https://firebase.google.com/docs/storage/web/handle-errors
+                switch (error.code) {
+                    case 'storage/unauthorized':
+                        // User doesn't have permission to access the object
+                        break;
+                    case 'storage/canceled':
+                        // User canceled the upload
+                        break;
+
+                    // ...
+
+                    case 'storage/unknown':
+                        // Unknown error occurred, inspect error.serverResponse
+                        break;
+                }
+            },
+            () => {
+                // Upload completed successfully, now we can get the download URL
+                getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+                    console.log('File available at', downloadURL);
+                    setURL(downloadURL)
+                    profilePhotoHandler(downloadURL)
+                });
+            }
+        );
+
+        // end
+
+
+
+        createUserNormal(email, password)
+            .then(userCredential => {
+                const user = userCredential.user;
+                console.log(user);
+                updateProfile(user, {
+                    username: name,
+                    profileURL: url
+                })
+
+                // sendEmailVerification(user)
+                //     .then(response => {
+                //         console.log(response);
+                //         // send toast message
+                //         alert("Account Created. Check email for verification.");
+                //     })
+                //     .catch(error => {
+                //         console.log(error.message);
+                //     })
+                console.log("Alhamdulillah, Account created successfully")
+
+            })
+            .catch(error => {
+                const errorMessage = error.message;
+                setErrorMessage(errorMessage)
+            })
     }
 
     return (
@@ -115,6 +179,16 @@ const Registration = () => {
                                     type="password"
                                     name="confirm_password"
                                     placeholder="Confirm password"
+                                    required
+                                    className="w-full px-4 py-2 rounded-md bg-transparent outline-none border-[1px]"
+                                />
+                            </div>
+                            <div className="relative h-11 w-full min-w-[200px]">
+                                <input
+                                    onChange={handleChange}
+                                    type="file"
+                                    name="file"
+                                    placeholder="Upload profile photo"
                                     required
                                     className="w-full px-4 py-2 rounded-md bg-transparent outline-none border-[1px]"
                                 />

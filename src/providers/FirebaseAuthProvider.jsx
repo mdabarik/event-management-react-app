@@ -1,4 +1,4 @@
-import { createContext, useEffect } from "react";
+import { createContext, useEffect, useState } from "react";
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 import auth from "../firebase/firebase.config";
 
@@ -6,6 +6,11 @@ export const FirebaseAuthContext = createContext(null);
 
 
 const FirebaseAuthProvider = ({children}) => {
+    const [profileURL, setProfileURL] = useState("");
+
+    const profilePhotoHandler = (url) => {
+        setProfileURL(url);
+    }
 
     const createUserNormal = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password);
@@ -19,7 +24,9 @@ const FirebaseAuthProvider = ({children}) => {
     const authInformation = {
         createUserNormal,
         loginNormal,
-        
+        setProfileURL,
+        profilePhotoHandler,
+        profileURL
     }
     
     useEffect(() => {

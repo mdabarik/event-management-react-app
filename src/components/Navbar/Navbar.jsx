@@ -3,8 +3,12 @@ import Logo from "../../assets/logo.png";
 import "./Navbar.css";
 
 import { CiLogin } from "react-icons/ci";
+import { useContext } from "react";
+import { FirebaseAuthContext } from "../../providers/FirebaseAuthProvider";
 
 const Navbar = () => {
+
+    const {profileURL} = useContext(FirebaseAuthContext);
 
     const navLinks = <>
         <li>
@@ -50,10 +54,15 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
+                    {
+                        profileURL !== "" ? <img className="w-[60px] h-[60px] object-cover" src={profileURL} alt="Profile" />
+                        :
+
                     <Link to="/login" className="btn bg-[#db332a] normal-case text-white border-none hover:bg-[#b5100b]">
                         <CiLogin className="text-xl"></CiLogin>
                         <span>Login</span>
                     </Link>
+                    }
                 </div>
             </nav>
         </div>
