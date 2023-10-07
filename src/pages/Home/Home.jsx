@@ -17,6 +17,7 @@ import CareerFairBanner from '../../components/CareerFairBanner/CareerFairBanner
 import UpcomingEvents from '../../components/UpcomingEvents/UpcomingEvents';
 import Footer from '../../components/Footer/Footer';
 import Services from '../../components/Services/Services';
+import Testimonials from '../../components/Testimonials/Testimonials';
 
 
 const Home = () => {
@@ -59,8 +60,11 @@ const Home = () => {
             <div className='mt-[88vh]'>
                 <UpcomingEvents></UpcomingEvents>
             </div>
-            <div className='w-[100vw] mx-auto border-2'>
+            <div className='w-[100vw] mx-auto'>
                 <Services></Services>
+            </div>
+            <div>
+                <Testimonials></Testimonials>
             </div>
             <Footer></Footer>
         </>
