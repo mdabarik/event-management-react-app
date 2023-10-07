@@ -5,7 +5,7 @@
         "name": "John Doe",
         "profession": "Marketing Manager",
         "review": "Working with this team was an exceptional experience. They delivered outstanding results and exceeded our expectations.",
-        "rating": 5
+        "rating": 3.2
     },
     {
         "id": 2,
@@ -21,7 +21,7 @@
         "name": "David Johnson",
         "profession": "Graphic Designer",
         "review": "Their creativity knows no bounds. They brought our vision to life with stunning designs. A pleasure to work with!",
-        "rating": 5
+        "rating": 3
     },
     {
         "id": 4,
@@ -29,7 +29,7 @@
         "name": "Emily Wilson",
         "profession": "Business Analyst",
         "review": "The team's analytical skills and strategic approach significantly contributed to our project's success. Impressed with their professionalism.",
-        "rating": 4.8
+        "rating": 4.3
     },
     {
         "id": 5,
@@ -37,6 +37,6 @@
         "name": "Michael Brown",
         "profession": "Sales Manager",
         "review": "Exceptional service and unmatched dedication. They went above and beyond to meet our requirements. 10/10!",
-        "rating": 5
+        "rating": 4
     }
 ]

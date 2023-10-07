@@ -1,7 +1,10 @@
 import LogoTestimonial from "../../assets/testimonial-logo.png";
+import Rating from '@mui/material/Rating';
+import Stack from '@mui/material/Stack';
+import StarIcon from '@mui/icons-material/Star';
 
 const Testimonial = ({ testimonial }) => {
-    console.log(testimonial);
+
     return (
         <div className="text-white h-[350px] rounded-lg relative">
             <img className="w-full h-[350px] rounded-lg" src={testimonial?.img} alt="img" />
@@ -15,10 +18,17 @@ const Testimonial = ({ testimonial }) => {
                     {testimonial.profession}
                 </h3>
                 <div>
+                    <p className="text-center text-sm">{testimonial?.review}</p>
+                </div>
+                <div className="mt-4">
+                    <Rating
+                        name="text-feedback"
+                        value={testimonial.rating}
+                        readOnly
+                        precision={0.1}
+                        emptyIcon={<StarIcon style={{ opacity: 1, color: "white" }} fontSize="inherit" />}
+                    />
 
-                    <p className="text-center text-sm">
-
-                        {testimonial?.review}</p>
                 </div>
             </div>
         </div>
