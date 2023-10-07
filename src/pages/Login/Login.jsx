@@ -94,7 +94,7 @@ const Login = () => {
                             type="button"
                             data-ripple-light="true"
                         >
-                            Register
+                            Login
                         </button>
                         <p className="mt-4 block text-center font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
                             <span className="mr-2">Don't have an account?</span>

@@ -9,7 +9,9 @@
         "button": {
             "label": "Register Now",
             "link": "/web-development-workshop-registration"
-        }
+        },
+        "location": "123 Main St, Cityville, State, 12345",
+        "eventDate": "15 November 2023"
     },
     {
         "id": 2,
@@ -21,7 +23,9 @@
         "button": {
             "label": "Join Webinar",
             "link": "/digital-marketing-webinar-registration"
-        }
+        },
+        "location": "456 Market Ave, Townsville, State, 56789",
+        "eventDate": "18 November 2023"
     },
     {
         "id": 3,
@@ -33,7 +37,9 @@
         "button": {
             "label": "Enroll Now",
             "link": "/leadership-training-registration"
-        }
+        },
+        "location": "789 Business Blvd, Villageton, State, 67890",
+        "eventDate": "21 November 2023"
     },
     {
         "id": 4,
@@ -45,7 +51,9 @@
         "button": {
             "label": "Book Your Spot",
             "link": "/data-science-workshop-registration"
-        }
+        },
+        "location": "101 Tech Lane, Techcity, State, 54321",
+        "eventDate": "25 November 2023"
     },
     {
         "id": 5,
@@ -57,7 +65,9 @@
         "button": {
             "label": "Join Webinar",
             "link": "/graphic-design-webinar-registration"
-        }
+        },
+        "location": "202 Creativity Street, Artville, State, 11223",
+        "eventDate": "28 November 2023"
     },
     {
         "id": 6,
@@ -69,7 +79,9 @@
         "button": {
             "label": "Register Now",
             "link": "/finance-workshop-registration"
-        }
+        },
+        "location": "303 Investment Avenue, Financetown, State, 99887",
+        "eventDate": "02 December 2023"
     },
     {
         "id": 7,
@@ -81,7 +93,9 @@
         "button": {
             "label": "Get Your Ticket",
             "link": "/entrepreneurship-conference-registration"
-        }
+        },
+        "location": "404 Startup Road, Entrepreneur City, State, 66776",
+        "eventDate": "05 December 2023"
     },
     {
         "id": 8,
@@ -93,7 +107,9 @@
         "button": {
             "label": "Join Seminar",
             "link": "/career-development-seminar-registration"
-        }
+        },
+        "location": "505 Career Avenue, Jobtown, State, 44555",
+        "eventDate": "08 December 2023"
     },
     {
         "id": 9,
@@ -105,7 +121,9 @@
         "button": {
             "label": "Attend Career Fair",
             "link": "/tech-career-fair-registration"
-        }
+        },
+        "location": "606 Tech Plaza, Techville, State, 22334",
+        "eventDate": "11 December 2023"
     },
     {
         "id": 10,
@@ -117,6 +135,8 @@
         "button": {
             "label": "Attend Career Fair",
             "link": "/healthcare-career-fair-registration"
-        }
+        },
+        "location": "707 Health Lane, Healthtown, State, 77889",
+        "eventDate": "14 December 2023"
     }
 ]
