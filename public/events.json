@@ -3,7 +3,7 @@
         "id": 1,
         "name": "Web Development Workshop",
         "type": "Workshop",
-        "image": "https://example.com/web-development-workshop.jpg",
+        "image": "https://i.ibb.co/YdJm76L/webdev-workshop.jpg",
         "price": "$99.99",
         "shortDescription": "Learn the fundamentals of web development. Hands-on coding and best practices.",
         "button": {
@@ -15,7 +15,7 @@
         "id": 2,
         "name": "Digital Marketing Webinar",
         "type": "Webinar",
-        "image": "https://example.com/digital-marketing-webinar.jpg",
+        "image": "https://i.ibb.co/bv0MMVq/digital-mark.jpg",
         "price": "Free",
         "shortDescription": "Strategies for effective digital marketing. SEO, social media, and content marketing insights.",
         "button": {
@@ -27,7 +27,7 @@
         "id": 3,
         "name": "Leadership Training Program",
         "type": "Training Program",
-        "image": "https://example.com/leadership-training.jpg",
+        "image": "https://i.ibb.co/17SsMF2/leadership.jpg",
         "price": "$149.99",
         "shortDescription": "Enhance leadership skills. Effective communication, team management, and decision-making.",
         "button": {
@@ -39,7 +39,7 @@
         "id": 4,
         "name": "Data Science Workshop",
         "type": "Workshop",
-        "image": "https://example.com/data-science-workshop.jpg",
+        "image": "https://i.ibb.co/r67x48x/business-person-looking-finance-graphs.jpg",
         "price": "$129.99",
         "shortDescription": "Introduction to data science tools and techniques. Data analysis and visualization.",
         "button": {
@@ -51,7 +51,7 @@
         "id": 5,
         "name": "Graphic Design Webinar",
         "type": "Webinar",
-        "image": "https://example.com/graphic-design-webinar.jpg",
+        "image": "https://i.ibb.co/ZMSGmLJ/graphics-design.jpg",
         "price": "Free",
         "shortDescription": "Explore the world of graphic design. Tools, techniques, and creative design concepts.",
         "button": {
@@ -63,7 +63,7 @@
         "id": 6,
         "name": "Finance and Investments Workshop",
         "type": "Workshop",
-        "image": "https://example.com/finance-workshop.jpg",
+        "image": "https://i.ibb.co/XYN0PK8/finance.jpg",
         "price": "$89.99",
         "shortDescription": "Understanding financial markets, investment strategies, and portfolio management.",
         "button": {
@@ -75,7 +75,7 @@
         "id": 7,
         "name": "Entrepreneurship Conference",
         "type": "Conference",
-        "image": "https://example.com/entrepreneurship-conference.jpg",
+        "image": "https://i.ibb.co/TtwCmfT/conference.jpg",
         "price": "$199.99",
         "shortDescription": "Learn from successful entrepreneurs. Business ideas, funding, and growth strategies.",
         "button": {
@@ -87,7 +87,7 @@
         "id": 8,
         "name": "Career Development Seminar",
         "type": "Seminar",
-        "image": "https://example.com/career-development-seminar.jpg",
+        "image": "https://i.ibb.co/6n04ZSj/meet.jpg",
         "price": "Free",
         "shortDescription": "Tips for career growth, resume building, and job interview success.",
         "button": {
@@ -99,7 +99,7 @@
         "id": 9,
         "name": "Tech Career Fair",
         "type": "Career Fair",
-        "image": "https://example.com/tech-career-fair.jpg",
+        "image": "https://i.ibb.co/2SxRLqh/business.jpg",
         "price": "Free Entry",
         "shortDescription": "Connect with leading tech companies. Explore job opportunities and network with professionals.",
         "button": {
@@ -111,7 +111,7 @@
         "id": 10,
         "name": "Healthcare Career Fair",
         "type": "Career Fair",
-        "image": "https://example.com/healthcare-career-fair.jpg",
+        "image": "https://i.ibb.co/Tmrx1Jp/healthcare.jpg",
         "price": "Free Entry",
         "shortDescription": "Explore careers in healthcare. Meet employers, learn about job openings, and connect with experts.",
         "button": {
