@@ -108,10 +108,7 @@ const Login = () => {
                     </form>
                 </div>
 
-                <div className="flex flex-row items-center justify-center rounded-full border-[1px] p-1 px-5 mt-4 bg-[#9CA3AF95]">
-                    <FcGoogle className="text-4xl"></FcGoogle>
-                    <span className="ml-3">Sign in with Google</span>
-                </div>
+                
 
                 {/* input form end */}
             </div>

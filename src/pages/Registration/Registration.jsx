@@ -1,13 +1,13 @@
 import BgImage from "../../components/BgImage/BgImage";
 import LoginBg from "../../assets/login-bg.jpg";
 import { Link } from "react-router-dom";
-
+import { FcGoogle } from 'react-icons/fc';
 
 const Registration = () => {
     return (
         <div className="h-[115vh] w-[100vw] flex items-center justify-center">
             <BgImage isFull={true} image={LoginBg}></BgImage>
-            <div className="flex flex-col justify-center items-center bg-[#ffffff88] rounded-lg p-8">
+            <div className="flex flex-col justify-center items-center bg-[#ffffff] rounded-lg p-8">
 
                 {/* input form start */}
                 <div className="relative flex flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none">
@@ -113,7 +113,10 @@ const Registration = () => {
                         </p>
                     </form>
                 </div>
-
+                <div className="flex flex-row items-center justify-center rounded-full border-[1px] p-1 px-5 mt-4 bg-[#9CA3AF95]">
+                    <FcGoogle className="text-4xl"></FcGoogle>
+                    <span className="ml-3">Sign in with Google</span>
+                </div>
                 {/* input form end */}
             </div>
         </div>
