@@ -12,6 +12,7 @@ import MainLayout from "../layout/MainLayout";
 import AboutUs from "../pages/AboutUs/AboutUs";
 import Conferences from "../pages/Conferences/Conferences";
 import Seminars from "../pages/Seminars/Seminars";
+import PrivateRouter from "./PrivateRouter/PrivateRouter";
 
 const routes = createBrowserRouter([
     {
@@ -25,19 +26,19 @@ const routes = createBrowserRouter([
             },
             {
                 path: '/workshops',
-                element: <WorkShops></WorkShops>
+                element: <PrivateRouter><WorkShops></WorkShops></PrivateRouter>
             },
             {
                 path: '/webinars',
-                element: <Webinars></Webinars>
+                element: <PrivateRouter><Webinars></Webinars></PrivateRouter>
             },
             {
                 path: '/career-fairs',
-                element: <CareerFairs></CareerFairs>
+                element: <PrivateRouter><CareerFairs></CareerFairs></PrivateRouter>
             },
             {
                 path: '/blogs',
-                element: <Blogs></Blogs>
+                element: <PrivateRouter><Blogs></Blogs></PrivateRouter>
             },
             {
                 path: '/contact-us',
@@ -57,11 +58,11 @@ const routes = createBrowserRouter([
             },
             {
                 path: '/conferences',
-                element: <Conferences></Conferences>
+                element: <PrivateRouter><Conferences></Conferences></PrivateRouter>
             },
             {
                 path: '/seminars',
-                element: <Seminars></Seminars>
+                element: <PrivateRouter><Seminars></Seminars></PrivateRouter>
             }
         ]
     }
