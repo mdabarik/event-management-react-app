@@ -1,9 +1,10 @@
 import React from 'react';
+import ContactUsBanner from '../../components/ContactUsBanner/ContactUsBanner';
 
 const ContactUs = () => {
     return (
         <div>
-            <h1>Contact Us Page</h1>
+            <ContactUsBanner></ContactUsBanner>
         </div>
     );
 };

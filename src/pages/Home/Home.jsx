@@ -12,6 +12,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import WebinarBanner from '../../components/WebinarBanner/WebinarBanner';
 import WorkshopBanner from '../../components/WorkshopBanner/WorkshopBanner';
+import ContactUsBanner from '../../components/ContactUsBanner/ContactUsBanner';
+import BlogBanner from '../../components/BlogBanner/BlogBanner';
+import CareerFairBanner from '../../components/CareerFairBanner/CareerFairBanner';
 
 
 const Home = () => {
@@ -32,24 +35,22 @@ const Home = () => {
                 navigation={true}
                 modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper"
-            >
-                <SwiperSlide>
-                    <BgImage image={webinarBg}></BgImage>
-                </SwiperSlide>
+                >
                 <SwiperSlide>
                     <WorkshopBanner image={workshopBg}></WorkshopBanner>
                 </SwiperSlide>
                 <SwiperSlide>
                     <WebinarBanner image={webinarBg}></WebinarBanner>
                 </SwiperSlide>
-                {/* <SwiperSlide>Slide 2</SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
-            <SwiperSlide>Slide 4</SwiperSlide>
-            <SwiperSlide>Slide 5</SwiperSlide>
-            <SwiperSlide>Slide 6</SwiperSlide>
-            <SwiperSlide>Slide 7</SwiperSlide>
-            <SwiperSlide>Slide 8</SwiperSlide>
-            <SwiperSlide>Slide 9</SwiperSlide> */}
+                <SwiperSlide>
+                    <CareerFairBanner></CareerFairBanner>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <BlogBanner></BlogBanner>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <ContactUsBanner></ContactUsBanner>
+                </SwiperSlide>
             </Swiper>
         </div>
     )
