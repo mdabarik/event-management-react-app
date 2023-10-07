@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "event": "Web Development Workshop",
+        "image": "https://i.ibb.co/YdJm76L/webdev-workshop.jpg",
+        "subtitle": "Crafting Digital Experiences Through Code and Creativity"
+    },
+    {
+        "id": 2,
+        "event": "Digital Marketing Webinar",
+        "image": "https://i.ibb.co/bv0MMVq/digital-mark.jpg",
+        "subtitle": "Navigating the Digital Landscape: Strategies for Online Success"
+    },
+    {
+        "id": 3,
+        "event": "Leadership Training Program",
+        "image": "https://i.ibb.co/17SsMF2/leadership.jpg",
+        "subtitle": "Empowering Leaders: Mastering Communication, Teamwork, and Decision-Making"
+    },
+    {
+        "id": 4,
+        "event": "Data Science Workshop",
+        "image": "https://i.ibb.co/r67x48x/business-person-looking-finance-graphs.jpg",
+        "subtitle": "Unraveling Data Mysteries: Tools, Techniques, and Insights"
+    },
+    {
+        "id": 5,
+        "event": "Graphic Design Webinar",
+        "image": "https://i.ibb.co/ZMSGmLJ/graphics-design.jpg",
+        "subtitle": "Designing the Future: Where Creativity Meets Technology"
+    },
+    {
+        "id": 6,
+        "event": "Finance and Investments Workshop",
+        "image": "https://i.ibb.co/XYN0PK8/finance.jpg",
+        "subtitle": "Navigating Financial Markets: Strategies for Growth and Wealth"
+    },
+    {
+        "id": 7,
+        "event": "Entrepreneurship Conference",
+        "image": "https://i.ibb.co/TtwCmfT/conference.jpg",
+        "subtitle": "Innovation, Investment, and Inspiration: A Journey into Entrepreneurship"
+    },
+    {
+        "id": 8,
+        "event": "Career Development Seminar",
+        "image": "https://i.ibb.co/6n04ZSj/meet.jpg",
+        "subtitle": "Climbing the Career Ladder: Skills, Strategies, and Success Stories"
+    },
+    {
+        "id": 9,
+        "event": "Tech Career Fair",
+        "image": "https://i.ibb.co/2SxRLqh/business.jpg",
+        "subtitle": "Connecting Talent with Tech: Exploring Opportunities in the Digital Age"
+    },
+    {
+        "id": 10,
+        "event": "Healthcare Career Fair",
+        "image": "https://i.ibb.co/Tmrx1Jp/healthcare.jpg",
+        "subtitle": "Healing Hands and Innovative Minds: Exploring Careers in Healthcare"
+    }
+]

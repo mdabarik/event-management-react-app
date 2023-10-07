@@ -1,7 +1,6 @@
 
 import webinarBg from '../../assets/webinar-bg.jpg';
 import workshopBg from '../../assets/workshop-bg.jpg';
-import BgImage from "../../components/BgImage/BgImage";
 import "./Home.css";
 
 import "swiper/css";
@@ -16,6 +15,8 @@ import ContactUsBanner from '../../components/ContactUsBanner/ContactUsBanner';
 import BlogBanner from '../../components/BlogBanner/BlogBanner';
 import CareerFairBanner from '../../components/CareerFairBanner/CareerFairBanner';
 import UpcomingEvents from '../../components/UpcomingEvents/UpcomingEvents';
+import Footer from '../../components/Footer/Footer';
+import Services from '../../components/Services/Services';
 
 
 const Home = () => {
@@ -58,6 +59,10 @@ const Home = () => {
             <div className='mt-[88vh]'>
                 <UpcomingEvents></UpcomingEvents>
             </div>
+            <div className='w-[100vw] mx-auto border-2'>
+                <Services></Services>
+            </div>
+            <Footer></Footer>
         </>
     )
 };

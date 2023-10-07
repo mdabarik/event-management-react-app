@@ -9,6 +9,9 @@ import CareerFairs from "../pages/CareerFairs/CareerFairs";
 import Blogs from "../pages/Blogs/Blogs";
 import ContactUs from "../pages/ContactUs/ContactUs";
 import MainLayout from "../layout/MainLayout";
+import AboutUs from "../pages/AboutUs/AboutUs";
+import Conferences from "../pages/Conferences/Conferences";
+import Seminars from "../pages/Seminars/Seminars";
 
 const routes = createBrowserRouter([
     {
@@ -47,6 +50,18 @@ const routes = createBrowserRouter([
             {
                 path: '/registration',
                 element: <Registration></Registration>
+            },
+            {
+                path: '/about-us',
+                element: <AboutUs></AboutUs>
+            },
+            {
+                path: '/conferences',
+                element: <Conferences></Conferences>
+            },
+            {
+                path: '/seminars',
+                element: <Seminars></Seminars>
             }
         ]
     }
