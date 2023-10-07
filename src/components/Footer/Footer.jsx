@@ -34,7 +34,8 @@ const Footer = () => {
     </>
 
     return (
-        <footer className="footer p-10 bg-neutral text-neutral-content">
+        <footer className="bg-neutral text-neutral-content">
+            <div className="footer py-8 w-[1280px] mx-auto">
             <nav>
                 <header className="footer-title">Services</header>
                 {servicesLinks}
@@ -49,6 +50,7 @@ const Footer = () => {
                     {socialLinks}
                 </div>
             </nav>
+            </div>
         </footer>
     );
 };
