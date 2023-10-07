@@ -13,6 +13,7 @@ import AboutUs from "../pages/AboutUs/AboutUs";
 import Conferences from "../pages/Conferences/Conferences";
 import Seminars from "../pages/Seminars/Seminars";
 import PrivateRouter from "./PrivateRouter/PrivateRouter";
+import FileInputTest from "../pages/FileInputTest/FileInputTest";
 
 const routes = createBrowserRouter([
     {
@@ -63,6 +64,10 @@ const routes = createBrowserRouter([
             {
                 path: '/seminars',
                 element: <PrivateRouter><Seminars></Seminars></PrivateRouter>
+            },
+            {
+                path: '/fileinputtest',
+                element: <FileInputTest></FileInputTest>
             }
         ]
     }

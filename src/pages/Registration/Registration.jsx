@@ -2,8 +2,72 @@ import BgImage from "../../components/BgImage/BgImage";
 import LoginBg from "../../assets/login-bg.jpg";
 import { Link } from "react-router-dom";
 import { FcGoogle } from 'react-icons/fc';
+import { useContext, useState } from "react";
+import { FirebaseAuthContext } from "../../providers/FirebaseAuthProvider";
+import { sendEmailVerification } from "firebase/auth";
 
 const Registration = () => {
+    const [errorMessage, setErrorMessage] = useState("");
+    const { createUserNormal } = useContext(FirebaseAuthContext);
+
+    const handleRegistration = (e) => {
+        e.preventDefault();
+        const name = e.target.name.value.trim();
+        const email = e.target.email.value.trim();
+        const password = e.target.password.value.trim();
+        const confirm_password = e.target.confirm_password.value.trim();
+        const checked = e.target.checkbox.checked;
+        // console.log(name, email, password, confirm_password, checked);
+
+        // reset error
+        setErrorMessage("");
+        // validation
+        if (password.length < 6) {
+            setErrorMessage("Password must contains 6 or more characters");
+            return;
+        } else if (!/[A-Z]/.test(password)) {
+            setErrorMessage("Password must contains at least 1 uppercase letter")
+            return;
+        } else if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+            setErrorMessage("Password must contain at least 1 special character")
+            return;
+        } else if (password !== confirm_password) {
+            setErrorMessage("Password and confirm password doesn't match")
+            return;
+        } else if (checked === false) {
+            setErrorMessage("Please accept terms and services");
+            return;
+        }
+
+        try {
+            createUserNormal(email, password)
+                .then(userCredential => {
+                    const user = userCredential.user;
+                    console.log(user);
+                    
+                    // sendEmailVerification(user)
+                    //     .then(response => {
+                    //         console.log(response);
+                    //         // send toast message
+                    //         alert("Account Created. Check email for verification.");
+                    //     })
+                    //     .catch(error => {
+                    //         console.log(error.message);
+                    //     })
+                    
+                })
+                .catch(error => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    setErrorMessage(errorMessage)
+                    console.log(errorCode, errorMessage);
+                })
+        } catch (e) {
+            console.log(e);
+        }
+
+    }
+
     return (
         <div className="h-[115vh] w-[100vw] flex items-center justify-center">
             <BgImage isFull={true} image={LoginBg}></BgImage>
@@ -17,13 +81,14 @@ const Registration = () => {
                     <p className="mt-1 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
                         Enter your details to register.
                     </p>
-                    <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96" autoComplete="off" >
+                    <form onSubmit={handleRegistration} className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96" autoComplete="off" >
                         <div className="mb-4 flex flex-col gap-6">
                             <div className="relative h-11 w-full min-w-[200px]">
                                 <input
                                     type="text"
                                     name="name"
                                     placeholder="Name"
+                                    required
                                     className="w-full px-4 py-2 rounded-md bg-transparent outline-none border-[1px]"
                                 />
                             </div>
@@ -32,6 +97,7 @@ const Registration = () => {
                                     type="email"
                                     name="email"
                                     placeholder="Email"
+                                    required
                                     className="w-full px-4 py-2 rounded-md bg-transparent outline-none border-[1px]"
                                 />
                             </div>
@@ -40,6 +106,7 @@ const Registration = () => {
                                     type="password"
                                     name="password"
                                     placeholder="Password"
+                                    required
                                     className="w-full px-4 py-2 rounded-md bg-transparent outline-none border-[1px]"
                                 />
                             </div>
@@ -48,6 +115,7 @@ const Registration = () => {
                                     type="password"
                                     name="confirm_password"
                                     placeholder="Confirm password"
+                                    required
                                     className="w-full px-4 py-2 rounded-md bg-transparent outline-none border-[1px]"
                                 />
                             </div>
@@ -60,6 +128,7 @@ const Registration = () => {
                             >
                                 <input
                                     type="checkbox"
+                                    name="checkbox"
                                     className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-[#db332a] checked:bg-[#db332a] checked:before:bg-[#db332a] hover:before:opacity-10"
                                     id="checkbox"
                                 />
@@ -86,28 +155,30 @@ const Registration = () => {
                             >
                                 <p className="flex items-center font-sans text-sm font-normal leading-normal text-gray-700 antialiased">
                                     I agree the
-                                    <a
+                                    <Link
+                                        to=""
                                         className="font-medium transition-colors hover:text-[#db332a]"
-                                        href="#"
                                     >
                                         &nbsp;Terms and Conditions
-                                    </a>
+                                    </Link>
                                 </p>
                             </label>
                         </div>
-                        <button
+                        <input
                             className="mt-6 block w-full select-none rounded-lg bg-[#db332a] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                            type="button"
+                            type="submit"
                             data-ripple-light="true"
-                        >
-                            Register
-                        </button>
+                            value="Register"
+                        />
+                        {
+                            errorMessage ? <h2 className="text-center text-red-700 text-sm mt-2">{errorMessage}</h2> : ""
+                        }
                         <p className="mt-4 block text-center font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
                             <span className="mr-2">Already have an account?</span>
                             <Link
                                 to="/login"
                                 className="font-medium text-[#db332a] transition-colors hover:text-blue-700"
-                                >
+                            >
                                 Login now
                             </Link>
                         </p>
