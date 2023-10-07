@@ -46,11 +46,11 @@ const routes = createBrowserRouter([
             },
             {
                 path: '/login',
-                element: <Login></Login>
+                element: <PrivateRouter><Login></Login></PrivateRouter>
             },
             {
                 path: '/registration',
-                element: <Registration></Registration>
+                element: <PrivateRouter><Registration></Registration></PrivateRouter>
             },
             {
                 path: '/about-us',
