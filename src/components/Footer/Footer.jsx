@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { FaTwitter } from "react-icons/fa";
 import { BsYoutube } from "react-icons/bs";
 import { BsFacebook } from "react-icons/bs";
+import Logo from "../../assets/logo.png";
+
 
 const Footer = () => {
 
@@ -14,11 +16,9 @@ const Footer = () => {
     </>
 
     const companyLinks = <>
+        <Link to="/home" className="link link-hover">Home</Link>
         <Link to="/about-us" className="link link-hover">About Us</Link>
         <Link to="/contact-us" className="link link-hover">Contact Us</Link>
-        <Link to="/blogs" className="link link-hover">Blogs</Link>
-        <Link to="/login" className="link link-hover">Login</Link>
-        <Link to="/registration" className="link link-hover">Registration</Link>
     </>
 
     const socialLinks = <>
@@ -35,21 +35,22 @@ const Footer = () => {
 
     return (
         <footer className="bg-neutral text-neutral-content">
-            <div className="footer py-8 container mx-auto">
-            <nav>
-                <header className="footer-title">Services</header>
-                {servicesLinks}
-            </nav>
-            <nav>
-                <header className="footer-title">Company</header>
-                {companyLinks}
-            </nav>
-            <nav>
-                <header className="footer-title">Social</header>
-                <div className="grid grid-flow-col gap-4">
-                    {socialLinks}
+            <div className="py-10 container mx-auto">
+                <div className="flex flex-col justify-center items-center gap-1">
+                    <img className="w-[80px] h-[80px]" src={Logo} alt="logo" />
+                    <span>Educational Event</span>
                 </div>
-            </nav>
+                <div className="flex items-center justify-center gap-4 mt-4 text-white link">
+                    {
+                        companyLinks
+                    }
+                </div>
+                <div className="flex items-center justify-center gap-4 mt-6 text-white link">
+                    {
+                        socialLinks
+                    }
+                </div>
+
             </div>
         </footer>
     );
