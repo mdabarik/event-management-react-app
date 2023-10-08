@@ -7,24 +7,50 @@ import "./Login.css";
 import { FcGoogle } from 'react-icons/fc';
 import { useContext } from "react";
 import { FirebaseAuthContext } from "../../providers/FirebaseAuthProvider";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useState } from "react";
 
 
 const Login = ({state}) => {
 
     const { user, loginNormal } = useContext(FirebaseAuthContext);
+    const [errorMsg, setErrorMsg] = useState("");
     const navigate = useNavigate();
 
-    if (user !== null) {
-        navigate("/");
-    }
+    // if (user !== null) {
+    //     navigate("/");
+    // }
 
     const handleLogin = (e) => {
         e.preventDefault();
         const email = e.target.email.value.trim();
         const password = e.target.password.value.trim();
         const checkbox = e.target.checkbox.checked;
-        console.log(email, password, checkbox);
+
+        if (checkbox === false) {
+            setErrorMsg("Please accept terms and conditions.");
+            return;
+        }
+
+        setErrorMsg("");
+        loginNormal(email, password)
+        .then(userCredential => {
+            // loggedin successfull
+            const curUser = userCredential.user;
+            console.log("logged in succesfull");
+        })
+        .catch(error => {
+            if (user?.email !== email) {
+                setErrorMsg("Wrong email, please check your email.")
+            } else if (user !== null) {
+                setErrorMsg("Wrong password, please check your password");
+            } else {
+                setErrorMsg(error.message);
+            }
+        })
     }
+
+
 
     return (
         <div className="h-[115vh] w-[100vw] flex items-center justify-center -z-50">
@@ -111,6 +137,12 @@ const Login = ({state}) => {
                         >
                             Login
                         </button>
+
+                        {
+                            errorMsg ? <h2 className="text-center text-red-700 text-sm mt-2">{errorMsg}</h2> : ""
+                        }
+
+
                         <p className="mt-4 block text-center font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
                             <span className="mr-2">Don't have an account?</span>
                             <Link
