@@ -3,10 +3,6 @@ import Login from "../pages/Login/Login";
 import Registration from "../pages/Registration/Registration";
 import Home from "../pages/Home/Home";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
-import WorkShops from "../pages/WorkShops/WorkShops";
-import Webinars from "../pages/Webinars/Webinars";
-import CareerFairs from "../pages/CareerFairs/CareerFairs";
-import Blogs from "../pages/Blogs/Blogs";
 import ContactUs from "../pages/ContactUs/ContactUs";
 import MainLayout from "../layout/MainLayout";
 import AboutUs from "../pages/AboutUs/AboutUs";
@@ -28,27 +24,6 @@ const routes = createBrowserRouter([
             {
                 path: '/event/:id',
                 element: <PrivateRouter><EventDetails></EventDetails></PrivateRouter>
-            }
-            ,
-            {
-                path: '/workshops',
-                element: <PrivateRouter><WorkShops></WorkShops></PrivateRouter>
-            },
-            {
-                path: '/webinars',
-                element: <PrivateRouter><Webinars></Webinars></PrivateRouter>
-            },
-            {
-                path: '/career-fairs',
-                element: <PrivateRouter><CareerFairs></CareerFairs></PrivateRouter>
-            },
-            {
-                path: '/blogs',
-                element: <PrivateRouter><Blogs></Blogs></PrivateRouter>
-            },
-            {
-                path: '/contact-us',
-                element: <ContactUs></ContactUs>
             },
             {
                 path: '/login',
@@ -57,6 +32,10 @@ const routes = createBrowserRouter([
             {
                 path: '/registration',
                 element: <Registration></Registration>
+            },
+            {
+                path: '/contact-us',
+                element: <ContactUs></ContactUs>
             },
             {
                 path: '/about-us',
