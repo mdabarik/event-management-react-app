@@ -16,7 +16,7 @@ const UpcomingEvents = () => {
     }, [])
 
     return (
-        <div className="w-[1280px] mx-auto mb-8">
+        <div className="container mx-auto mb-8">
             <h2 className="font-semibold w-full text-center text-3xl">Upcoming <span className="text-[#db332a]">Events</span></h2>
             <p className="text-sm mt-3 text-center">Join us for thrilling events! Live music, workshops, art exhibits, and more! Mark your calendars and don't miss out!</p>
             <div className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

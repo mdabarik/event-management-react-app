@@ -1,6 +1,6 @@
 import BgImage from "../../components/BgImage/BgImage";
 import LoginBg from "../../assets/login-bg.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from 'react-icons/fc';
 import { useContext, useState } from "react";
 import { FirebaseAuthContext } from "../../providers/FirebaseAuthProvider";
@@ -9,14 +9,26 @@ import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { storage } from "../../firebase/firebase.config";
 
 const Registration = () => {
+
+
+    const navigate = useNavigate();
     const [errorMessage, setErrorMessage] = useState("");
-    const { createUserNormal, profilePhotoHandler } = useContext(FirebaseAuthContext);
+    const { createUserNormal, profilePhotoHandler, googleSignIn, profileNameHandler, user } = useContext(FirebaseAuthContext);
+
+    if (user !== null) {
+        navigate("/");
+    }
+
     const [file, setFile] = useState(null);
     const [url, setURL] = useState("");
 
     const handleChange = (e) => {
         if (e.target.files[0])
             setFile(e.target.files[0]);
+    }
+
+    const redirectToLogin = () => {
+        navigate("/login");
     }
 
     const handleRegistration = (e) => {
@@ -97,38 +109,72 @@ const Registration = () => {
                     console.log('File available at', downloadURL);
                     setURL(downloadURL)
                     profilePhotoHandler(downloadURL)
+
+                    createUserNormal(email, password)
+                        .then(userCredential => {
+                            const user = userCredential.user;
+
+                            // console.log(user);
+
+                            updateProfile(user, {
+                                displayName: name,
+                                photoURL: downloadURL,
+                                reloadUserInfo: {
+                                    photoUrl: downloadURL
+                                }
+                            })
+
+                            profilePhotoHandler(url);
+                            profileNameHandler(name);
+                            // userHandler(user);
+
+                            // sendEmailVerification(user)
+                            //     .then(response => {
+                            //         console.log(response);
+                            //         // send toast message
+                            //         alert("Account Created. Check email for verification.");
+                            //     })
+                            //     .catch(error => {
+                            //         console.log(error.message);
+                            //     })
+
+                            console.log("Alhamdulillah, Account created successfully")
+                            redirectToLogin();
+                        })
+                        .catch(error => {
+                            const errorMessage = error.message;
+                            setErrorMessage(errorMessage)
+                        })
+
+
+
+
                 });
             }
         );
-
         // end
 
 
+    }
 
-        createUserNormal(email, password)
-            .then(userCredential => {
-                const user = userCredential.user;
+    const handleGoogleSignedIn = () => {
+        googleSignIn()
+            .then(res => {
+                const user = res.user;
+
                 console.log(user);
-                updateProfile(user, {
-                    username: name,
-                    profileURL: url
-                })
+                const name = user.displayName;
+                const email = user.email;
+                const profile = user.photoURL;
 
-                // sendEmailVerification(user)
-                //     .then(response => {
-                //         console.log(response);
-                //         // send toast message
-                //         alert("Account Created. Check email for verification.");
-                //     })
-                //     .catch(error => {
-                //         console.log(error.message);
-                //     })
-                console.log("Alhamdulillah, Account created successfully")
-
+                profilePhotoHandler(profile);
+                profileNameHandler(name);
+                // userHandler(user);
+                navigate("/")
             })
-            .catch(error => {
-                const errorMessage = error.message;
-                setErrorMessage(errorMessage)
+            .catch(err => {
+                const error = err.message;
+                setErrorMessage(error);
             })
     }
 
@@ -258,7 +304,7 @@ const Registration = () => {
                         </p>
                     </form>
                 </div>
-                <div className="flex flex-row items-center justify-center rounded-full border-[1px] p-1 px-5 mt-4 bg-[#9CA3AF95]">
+                <div onClick={handleGoogleSignedIn} className="flex hover:cursor-pointer flex-row items-center justify-center rounded-full border-[1px] p-1 px-5 mt-4 bg-[#9CA3AF95]">
                     <FcGoogle className="text-4xl"></FcGoogle>
                     <span className="ml-3">Sign in with Google</span>
                 </div>

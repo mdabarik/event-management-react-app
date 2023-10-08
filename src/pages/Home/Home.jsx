@@ -57,14 +57,14 @@ const Home = () => {
                     </SwiperSlide>
                 </Swiper>
             </div>
-            <div className='mt-[88vh]'>
+            <div className='mt-[88vh] mx-auto w-[100vw]'>
                 <UpcomingEvents></UpcomingEvents>
             </div>
-            <div className='w-[100vw] mx-auto'>
+            <div className='w-[100%] mx-auto'>
                 <Services></Services>
             </div>
 
-            <div className='w-[100vw] mx-auto'>
+            <div className='w-[100%] mx-auto'>
                 <Testimonials></Testimonials>
             </div>
             <Footer></Footer>

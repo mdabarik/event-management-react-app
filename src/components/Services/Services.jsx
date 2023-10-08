@@ -22,7 +22,7 @@ const Services = () => {
     }, [])
 
     return (
-        <div className="w-[1280px] mx-auto">
+        <div className="container mx-auto">
             <div className="mt-8">
                 <h2 className="font-semibold w-full text-center text-3xl">Our <span className="text-[#db332a]">Services</span></h2>
                 <p className="text-sm my-3 text-center">Empowering Growth and Learning Across Industries: <br /> Explore Our Diverse Range of Services</p>

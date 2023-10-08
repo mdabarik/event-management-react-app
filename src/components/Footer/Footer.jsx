@@ -35,7 +35,7 @@ const Footer = () => {
 
     return (
         <footer className="bg-neutral text-neutral-content">
-            <div className="footer py-8 w-[1280px] mx-auto">
+            <div className="footer py-8 container mx-auto">
             <nav>
                 <header className="footer-title">Services</header>
                 {servicesLinks}
