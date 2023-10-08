@@ -21,6 +21,7 @@ import Testimonials from '../../components/Testimonials/Testimonials';
 import { useLoaderData } from 'react-router-dom';
 import Banner from '../../components/Banner/Banner';
 import { useEffect, useState } from 'react';
+import AOS from 'aos';
 
 
 const Home = () => {
@@ -28,6 +29,7 @@ const Home = () => {
     const [services, setServices] = useState([]);
     
     useEffect(() => {
+        AOS.init();
         fetch("../../services.json")
         .then(res => res.json())
         .then(data => {
@@ -38,7 +40,7 @@ const Home = () => {
 
     return (
         <>
-            <div className='w-[100vw] h-[85vh] absolute top-0 left-0 -z-10'>
+            <div data-aos="zoom-in" className='w-[100vw] h-[85vh] absolute top-0 left-0 -z-10'>
                 <Swiper
                     loop={true}
                     spaceBetween={30}

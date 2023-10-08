@@ -1,6 +1,6 @@
-import Swal from "sweetalert2";
 import Footer from "../Footer/Footer";
 import EventBg from "./EventBg";
+import Swal from "sweetalert2";
 
 const EventBanner = ({ card }) => {
     const handleClickCTA = () => {

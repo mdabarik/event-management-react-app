@@ -1,4 +1,5 @@
 
+
 const Service = ({ service }) => {
     return (
         <div className="text-white h-[250px] rounded-lg relative">

@@ -1,16 +1,17 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./Services.css";
-
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Autoplay, Keyboard, Scrollbar, Navigation, EffectCoverflow, Pagination } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { useEffect, useState } from "react";
 import Service from "../Service/Service";
+import AOS from 'aos';
 
 const Services = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
+        AOS.init();
         fetch("https://raw.githubusercontent.com/mdabarik/json-data-store/main/services.json")
             .then(res => res.json())
             .then(services => {
@@ -22,7 +23,7 @@ const Services = () => {
     }, [])
 
     return (
-        <div className="container w-[90%] md:w-[100%] mx-auto">
+        <div data-aos="zoom-out-down" className="container w-[90%] md:w-[100%] mx-auto">
             <div className="mt-8 flex flex-col items-center justify-center w-[100%]">
                 <h2 className="font-semibold w-full text-center text-xl md:text-2xl lg:text-3xl">Our <span className="text-[#db332a]">Services</span></h2>
                 <p className="text-[8px] md:text-sm flex my-3 text-center">Empowering Growth and Learning Across Industries: <br /> Explore Our Diverse Range of Services</p>

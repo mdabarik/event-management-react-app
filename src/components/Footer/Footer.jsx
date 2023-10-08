@@ -3,9 +3,14 @@ import { FaTwitter } from "react-icons/fa";
 import { BsYoutube } from "react-icons/bs";
 import { BsFacebook } from "react-icons/bs";
 import Logo from "../../assets/logo.png";
-
+import AOS from 'aos';
+import { useEffect } from "react";
 
 const Footer = () => {
+
+    useEffect(() => {
+        AOS.init();
+    }, [])
 
     const companyLinks = <>
         <Link to="/" className="link link-hover">Home</Link>
@@ -26,7 +31,7 @@ const Footer = () => {
     </>
 
     return (
-        <footer className="bg-neutral text-neutral-content">
+        <footer data-aos="zoom-in" className="bg-neutral text-neutral-content">
             <div className="py-10 container mx-auto">
                 <div className="flex flex-col justify-center items-center gap-1">
                     <img className="w-[80px] h-[80px]" src={Logo} alt="logo" />

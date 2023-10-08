@@ -4,12 +4,17 @@ import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from 'react-icons/fc';
 import { useContext, useEffect, useState } from "react";
 import { FirebaseAuthContext } from "../../providers/FirebaseAuthProvider";
-import { sendEmailVerification, updateProfile } from "firebase/auth";
+import { updateProfile } from "firebase/auth";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { storage } from "../../firebase/firebase.config";
 import Footer from "../../components/Footer/Footer";
+import AOS from 'aos';
 
 const Registration = () => {
+
+    useEffect(() => {
+        AOS.init();
+    },[])
 
 
     const navigate = useNavigate();
@@ -179,7 +184,7 @@ const Registration = () => {
     }
 
     return (
-        <>
+        <div data-aos="zoom-out-up">
             <div className="h-[130vh] w-[100vw] flex items-center justify-center">
                 <BgImage isFull={true} image={LoginBg}></BgImage>
                 <div className="flex flex-col justify-center items-center bg-[#ffffff] rounded-lg p-8">
@@ -315,7 +320,7 @@ const Registration = () => {
             <div className="mt-[10vh] w-[100vw]">
                 <Footer></Footer>
             </div>
-        </>
+        </div>
     );
 };
 

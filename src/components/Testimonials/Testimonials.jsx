@@ -2,15 +2,16 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Autoplay, Keyboard, Scrollbar, Navigation, EffectCoverflow, Pagination } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { useEffect, useState } from "react";
 import Testimonial from "../Testimonial/Testimonial";
-
+import AOS from 'aos';
 
 const Testimonials = () => {
     const [testimonials, setTestimonials] = useState([]);
 
     useEffect(() => {
+        AOS.init();
         fetch("https://raw.githubusercontent.com/mdabarik/json-data-store/main/testimonials.json")
             .then(res => res.json())
             .then(testimonials => {
@@ -23,7 +24,7 @@ const Testimonials = () => {
 
 
     return (
-        <div className="container w-[90%] md:w-[100%] mx-auto">
+        <div data-aos="flip-down" className="container w-[90%] md:w-[100%] mx-auto">
             <div className="mt-8">
                 <div className="flex flex-col items-center justify-center">
                     <h2 className="font-semibold w-full text-center text-xl md:text-2xl lg:text-3xl">Client <span className="text-[#db332a]">Testimonials</span></h2>

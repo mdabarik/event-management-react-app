@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import BlogBanner from "../../components/BlogBanner/BlogBanner";
 import Footer from "../../components/Footer/Footer";
 import AboutUsBanner from "./AboutUsBanner";
 import AboutUsTeam from "./AboutUsTeam";
+import AOS from 'aos';
 
 const AboutUs = () => {
     const [members, setMembers] = useState([])
     useEffect(() => {
+        AOS.init();
         fetch("https://raw.githubusercontent.com/mdabarik/json-data-store/main/team.json")
             .then(res => res.json())
             .then(data => {
@@ -19,7 +20,7 @@ const AboutUs = () => {
     }, [])
 
     return (
-        <div>
+        <div data-aos="flip-up">
             <div>
                 <AboutUsBanner></AboutUsBanner>
             </div>

@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import Footer from "../../components/Footer/Footer";
 import ContactMember from "./ContactMember";
 import ContactUsBanner from "./ContactUsBanner";
+import AOS from 'aos';
 
 const AboutUs = () => {
     const [members, setMembers] = useState([])
     useEffect(() => {
+        AOS.init();
         fetch("https://raw.githubusercontent.com/mdabarik/json-data-store/main/team.json")
             .then(res => res.json())
             .then(data => {
@@ -18,7 +20,7 @@ const AboutUs = () => {
     }, [])
 
     return (
-        <div>
+        <div data-aos="flip-down">
             <div>
                 <ContactUsBanner></ContactUsBanner>
             </div>
