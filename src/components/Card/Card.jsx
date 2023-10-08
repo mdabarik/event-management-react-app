@@ -1,8 +1,17 @@
 import { MdDateRange } from "react-icons/md";
 import { ImLocation2 } from "react-icons/im";
 import { BiSolidTime } from "react-icons/bi";
+import { useNavigate } from "react-router-dom";
 
 const Card = ({ card }) => {
+
+    const navigate = useNavigate();
+
+    const handleCardClick = () => {
+        navigate(`/event/${card.id}`);
+    }
+
+
     return (
         <div className="bg-[#ebe5e5] m-2 rounded-lg flex flex-col justify-between">
             <div className="relative mb-4">
@@ -40,7 +49,7 @@ const Card = ({ card }) => {
                 </div>
             </div>
             <div className="px-4 mb-5 py-2">
-                <button className="py-1 md:py-2 text-sm md:text-lg w-full btn-secondary rounded-lg bg-[#db332adc] hover:bg-[#db332a]">{card.button.label}</button>
+                <button onClick={handleCardClick} className="py-1 md:py-2 text-sm md:text-lg w-full btn-secondary rounded-lg bg-[#db332adc] hover:bg-[#db332a]">{card.button.label}</button>
             </div>
         </div>
     );

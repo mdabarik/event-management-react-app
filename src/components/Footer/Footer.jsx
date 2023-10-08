@@ -7,16 +7,8 @@ import Logo from "../../assets/logo.png";
 
 const Footer = () => {
 
-    const servicesLinks = <>
-        <Link to="/workshops" className="link link-hover">Workshops</Link>
-        <Link to="/webinars" className="link link-hover">Webinars</Link>
-        <Link to="/career-fairs" className="link link-hover">Career Fairs</Link>
-        <Link to="/conferences" className="link link-hover">Conferences</Link>
-        <Link to="/seminars" className="link link-hover">Seminars</Link>
-    </>
-
     const companyLinks = <>
-        <Link to="/home" className="link link-hover">Home</Link>
+        <Link to="/" className="link link-hover">Home</Link>
         <Link to="/about-us" className="link link-hover">About Us</Link>
         <Link to="/contact-us" className="link link-hover">Contact Us</Link>
     </>

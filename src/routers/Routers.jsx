@@ -13,6 +13,7 @@ import AboutUs from "../pages/AboutUs/AboutUs";
 import Conferences from "../pages/Conferences/Conferences";
 import Seminars from "../pages/Seminars/Seminars";
 import PrivateRouter from "./PrivateRouter/PrivateRouter";
+import EventDetails from "../pages/EventDetails/EventDetails";
 
 const routes = createBrowserRouter([
     {
@@ -22,9 +23,13 @@ const routes = createBrowserRouter([
         children: [
             {
                 path: '/',
-                loader: () => fetch("./services.json"),
                 element: <Home></Home>
             },
+            {
+                path: '/event/:id',
+                element: <PrivateRouter><EventDetails></EventDetails></PrivateRouter>
+            }
+            ,
             {
                 path: '/workshops',
                 element: <PrivateRouter><WorkShops></WorkShops></PrivateRouter>

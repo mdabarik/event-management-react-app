@@ -20,11 +20,21 @@ import Services from '../../components/Services/Services';
 import Testimonials from '../../components/Testimonials/Testimonials';
 import { useLoaderData } from 'react-router-dom';
 import Banner from '../../components/Banner/Banner';
+import { useEffect, useState } from 'react';
 
 
 const Home = () => {
 
-    const services = useLoaderData();
+    const [services, setServices] = useState([]);
+    
+    useEffect(() => {
+        fetch("https://raw.githubusercontent.com/mdabarik/json-data-store/main/services.json")
+        .then(res => res.json())
+        .then(data => {
+            setServices(data)
+        })
+        .catch()
+    }, [])
 
     return (
         <>
@@ -46,7 +56,7 @@ const Home = () => {
                     className="mySwiper"
                 >
                     {
-                        services.map(card => {
+                        services?.map(card => {
                             return <SwiperSlide key={card.id}>
                                 <Banner card={card}> </Banner>
                             </SwiperSlide>

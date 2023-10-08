@@ -21,10 +21,6 @@ const Login = ({ state }) => {
         AOS.init();
     }, [user])
 
-    const u = auth.currentUser;
-    console.log(u);
-
-
 
     const [errorMsg, setErrorMsg] = useState("");
     const [errorMessage, setErrorMessage] = useState("");

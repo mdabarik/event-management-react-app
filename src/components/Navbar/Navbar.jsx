@@ -84,7 +84,7 @@ const Navbar = () => {
 
 
                                 :
-                                <Link to="/login" className="px-3 py-2 bg-[#db332a] normal-case text-white border-none hover:bg-[#b5100b]">
+                                <Link to="/login" className="px-3 py-2 bg-[#db332a] normal-case flex gap-1 text-white border-none hover:bg-[#b5100b]">
                                     <CiLogin className="text-xl"></CiLogin>
                                     <span>Login</span>
                                 </Link>
