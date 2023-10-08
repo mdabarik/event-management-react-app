@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import EventBanner from "../../components/EventBanner/EventBanner";
+import Footer from "../../components/Footer/Footer";
 
 const EventDetails = () => {
     const [cardInfo, setCardInfo] = useState({});
@@ -27,6 +28,9 @@ const EventDetails = () => {
                     cardInfo.eventDetails
                 }
                 </p>
+            </div>
+            <div className="mt-[30px] w-[100vw]">
+                <Footer></Footer>
             </div>
         </>
     );
