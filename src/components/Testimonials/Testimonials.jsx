@@ -23,16 +23,18 @@ const Testimonials = () => {
 
 
     return (
-        <div className="container mx-auto">
+        <div className="container w-[90%] md:w-[100%] mx-auto">
             <div className="mt-8">
-                <h2 className="font-semibold w-full text-center text-3xl">Client <span className="text-[#db332a]">Testimonials</span></h2>
-                <p className="text-sm my-3 text-center">Discover What Our Clients Say: Real Stories, Real Experiences</p>
+                <div className="flex flex-col items-center justify-center">
+                    <h2 className="font-semibold w-full text-center text-xl md:text-2xl lg:text-3xl">Client <span className="text-[#db332a]">Testimonials</span></h2>
+                    <p className="text-[8px] md:text-sm flex my-3 text-center">Discover What Our Clients Say: Real Stories, Real Experiences</p>
+                </div>
             </div>
             <div className="mb-8">
                 <Swiper
                     slidesPerView={2}
                     loop={true}
-                    spaceBetween={30}
+                    spaceBetween={16}
                     centeredSlides={true}
                     autoplay={{
                         delay: 2500,

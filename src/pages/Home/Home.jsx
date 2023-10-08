@@ -18,9 +18,14 @@ import UpcomingEvents from '../../components/UpcomingEvents/UpcomingEvents';
 import Footer from '../../components/Footer/Footer';
 import Services from '../../components/Services/Services';
 import Testimonials from '../../components/Testimonials/Testimonials';
+import { useLoaderData } from 'react-router-dom';
+import Banner from '../../components/Banner/Banner';
 
 
 const Home = () => {
+
+    const services = useLoaderData();
+
     return (
         <>
             <div className='w-[100vw] h-[85vh] absolute top-0 left-0 -z-10'>
@@ -40,31 +45,23 @@ const Home = () => {
                     modules={[Autoplay, Pagination, Navigation]}
                     className="mySwiper"
                 >
-                    <SwiperSlide>
-                        <WorkshopBanner image={workshopBg}></WorkshopBanner>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <WebinarBanner image={webinarBg}></WebinarBanner>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <CareerFairBanner></CareerFairBanner>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <BlogBanner></BlogBanner>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <ContactUsBanner></ContactUsBanner>
-                    </SwiperSlide>
+                    {
+                        services.map(card => {
+                            return <SwiperSlide key={card.id}>
+                                <Banner card={card}> </Banner>
+                            </SwiperSlide>
+                        })
+                    }
                 </Swiper>
             </div>
-            <div className='mt-[88vh] mx-auto w-[100vw]'>
+            <div className='mt-[88vh] mx-auto container w-[100vw]'>
                 <UpcomingEvents></UpcomingEvents>
             </div>
-            <div className='w-[100%] mx-auto'>
+            <div className='w-[100vw] mx-auto'>
                 <Services></Services>
             </div>
 
-            <div className='w-[100%] mx-auto'>
+            <div className='w-[100vw] mx-auto'>
                 <Testimonials></Testimonials>
             </div>
             <Footer></Footer>

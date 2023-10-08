@@ -8,24 +8,24 @@ import { useContext } from "react";
 import { FirebaseAuthContext } from "../../providers/FirebaseAuthProvider";
 
 const Navbar = () => {
+    const { user, loading, loggedIn, logOut } = useContext(FirebaseAuthContext);
 
-    const { user, profileURL, profileName, loading } = useContext(FirebaseAuthContext);
+    const handleLogout = () => {
+        logOut()
+            .then(() => {
+                // log out success
+            })
+            .catch(() => {
+                // log out fail
+            })
+    }
 
     const navLinks = <>
         <li>
             <NavLink to="/">Home</NavLink>
         </li>
         <li>
-            <NavLink to="/workshops">Workshops</NavLink>
-        </li>
-        <li>
-            <NavLink to="/webinars">Webinars</NavLink>
-        </li>
-        <li>
-            <NavLink to="/career-fairs">Career Fairs</NavLink>
-        </li>
-        <li>
-            <NavLink to="/blogs">Blogs</NavLink>
+            <NavLink to="/about-us">About Us</NavLink>
         </li>
         <li>
             <NavLink to="/contact-us">Contact Us</NavLink>
@@ -46,7 +46,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <Link className="normal-case text-xl ml-2 lg:ml-0" to="/">
-                        <img className="w-[60px] h-[60px]" src={Logo} alt="Logo" />
+                        <img className="w-[40px] h-[40px] md:w-[60px] md:h-[60px]" src={Logo} alt="Logo" />
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -55,6 +55,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
+                    <p>{loggedIn}</p>
 
                     {
                         loading ?
@@ -63,27 +64,27 @@ const Navbar = () => {
 
                             user
                                 ?
-                                <div className="flex">
-                                    <div className="dropdown dropdown-end">
-                                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                            <div className="rounded-full">
-                                                <img className="w-[70px] h-[70px] object-cover rounded-full" src={user.photoURL} alt="Profile" />
-                                            </div>
-                                        </label>
-                                        <ul tabIndex={0} className="dropdown-content flex flex-col bg-[#0000004a] items-center  z-[1] shadow rounded-box w-32 py-5 gap-4">
-                                            <li> {user.displayName} </li>
-                                            <li className="">
-                                                <button className="bg-[#db332a] py-2 px-3 flex items-center justify-center rounded-full normal-case text-white border-none hover:bg-[#b5100b] active:bg-[#b5100b]">
-                                                    <AiOutlineLogout className="text-xl"></AiOutlineLogout>
-                                                    <span className="text-[12px]">Logout</span>
-                                                </button>
-                                            </li>
-                                        </ul>
-                                    </div>
 
+                                <div className="flex gap-3 items-center justify-center">
+                                    <div className="flex items-center flex-col-reverse md:flex-row gap-2">
+                                        <div>
+                                            <p className="text-[10px] md:text-sm">{user.displayName}</p>
+                                        </div>
+                                        <div className="rounded-full">
+                                            <img className="w-[40px] h-[40px] border-[#f0ebeb8d] border-[1px] object-cover rounded-full" src={user.photoURL} alt="Profile" />
+                                        </div>
+                                    </div>
+                                    <div onClick={handleLogout} className="">
+                                        <button className="bg-[#db332a] py-2 px-3 flex items-center justify-center rounded-full normal-case text-white border-none hover:bg-[#b5100b] active:bg-[#b5100b]">
+                                            <AiOutlineLogout className="text-xl"></AiOutlineLogout>
+                                            <span className="text-[12px]">Logout</span>
+                                        </button>
+                                    </div>
                                 </div>
+
+
                                 :
-                                <Link to="/login" className="btn bg-[#db332a] normal-case text-white border-none hover:bg-[#b5100b]">
+                                <Link to="/login" className="px-3 py-2 bg-[#db332a] normal-case text-white border-none hover:bg-[#b5100b]">
                                     <CiLogin className="text-xl"></CiLogin>
                                     <span>Login</span>
                                 </Link>

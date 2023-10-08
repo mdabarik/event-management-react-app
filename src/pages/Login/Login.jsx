@@ -5,21 +5,35 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "./Login.css";
 import { FcGoogle } from 'react-icons/fc';
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { FirebaseAuthContext } from "../../providers/FirebaseAuthProvider";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
+import auth from "../../firebase/firebase.config";
+import AOS from 'aos';
 
 
-const Login = ({state}) => {
+const Login = ({ state }) => {
+    const { user, loginNormal, googleSignIn, handleLoggedInStatus, setLoading } = useContext(FirebaseAuthContext);
+    console.log(user);
+    useEffect(() => {
+        if (user) return;
+        AOS.init();
+    }, [user])
 
-    const { user, loginNormal } = useContext(FirebaseAuthContext);
+    const u = auth.currentUser;
+    console.log(u);
+
+
+
     const [errorMsg, setErrorMsg] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
     const navigate = useNavigate();
 
-    // if (user !== null) {
-    //     navigate("/");
-    // }
+
+    if (user !== null) {
+        navigate("/");
+    }
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -34,31 +48,43 @@ const Login = ({state}) => {
 
         setErrorMsg("");
         loginNormal(email, password)
-        .then(userCredential => {
-            // loggedin successfull
-            const curUser = userCredential.user;
-            console.log("logged in succesfull");
-        })
-        .catch(error => {
-            if (user?.email !== email) {
-                setErrorMsg("Wrong email, please check your email.")
-            } else if (user !== null) {
-                setErrorMsg("Wrong password, please check your password");
-            } else {
+            .then(userCredential => {
+                // loggedin successfull
+                const curUser = userCredential.user;
+                setLoading(false)
+            })
+            .catch(error => {
+                console.log(error);
                 setErrorMsg(error.message);
-            }
-        })
+                setLoading(false)
+            })
+    }
+
+    const handleGoogleSignedIn = () => {
+        setLoading(false)
+        googleSignIn()
+            .then(res => {
+                const user = res.user;
+                console.log("looged in", user);
+                setLoading(false)
+                navigate("/")
+
+            })
+            .catch(err => {
+                const error = err.message;
+                setErrorMessage(error);
+                setLoading(false)
+            })
     }
 
 
-
     return (
-        <div className="h-[115vh] w-[100vw] flex items-center justify-center -z-50">
+        <div data-aos="zoom-in-up" className="h-[115vh] w-[100vw] flex items-center justify-center -z-50">
             <BgImage className="-z-10" isFull={true} image={LoginBg}></BgImage>
             <div className="flex flex-col justify-center items-center bg-[#ffffff88] rounded-lg p-8">
 
                 {/* input form start */}
-                <div className="relative flex flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none">
+                <div data-aos="flip-left" className="relative flex flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none">
                     <h4 className="block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
                         Login Now
                     </h4>
@@ -155,7 +181,10 @@ const Login = ({state}) => {
                     </form>
                 </div>
 
-                
+                <div onClick={handleGoogleSignedIn} className="flex hover:cursor-pointer flex-row items-center justify-center rounded-full border-[1px] p-1 px-5 mt-4 bg-[#9CA3AF95]">
+                    <FcGoogle className="text-4xl"></FcGoogle>
+                    <span className="ml-3">Sign in with Google</span>
+                </div>
 
                 {/* input form end */}
             </div>

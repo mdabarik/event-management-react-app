@@ -8,7 +8,7 @@
         "shortDescription": "Learn the fundamentals of web development. Hands-on coding and best practices.",
         "eventDetails": "Welcome to our comprehensive Web Development Workshop, where the digital realm comes to life through the art of coding and creativity. In this immersive event, participants will embark on a thrilling journey into the heart of web development, exploring the very building blocks of the internet we interact with daily. This workshop is not just a tutorial; it's a hands-on experience where you'll craft your digital universe under the guidance of seasoned professionals.\n\nWhat to Expect:\n\nThe workshop spans a four-hour duration, meticulously crafted to cater to individuals at various skill levels. Whether you're a novice venturing into the world of coding or an experienced developer seeking to refine your techniques, this workshop offers tailored modules to suit your needs. From the fundamentals of HTML and CSS to the dynamic world of JavaScript and web frameworks, you'll gain a well-rounded understanding of web development.\n\nWhy Attend:\n\nBy the end of this workshop, you'll not only possess the skills to create web applications but also the ability to implement industry best practices. The hands-on coding exercises and real-world examples will equip you with the confidence to tackle web development projects head-on. Moreover, you'll have the opportunity to network with fellow participants, creating valuable connections in the tech industry.\n\nWho Should Attend:\n\n- Aspiring web developers\n- Students interested in web development\n- Professionals looking to enhance their tech skills",
         "button": {
-            "label": "Register Now",
+            "label": "View Details",
             "link": "/web-development-workshop-registration"
         },
         "location": "123 Main St, UK",
@@ -25,7 +25,7 @@
         "shortDescription": "Strategies for effective digital marketing. SEO, social media, and content marketing insights.",
         "eventDetails": "Join our Digital Marketing Webinar for a deep dive into the world of online marketing strategies. In this two-hour webinar, industry experts will share their insights into the ever-evolving landscape of digital marketing, covering essential areas such as search engine optimization (SEO), social media marketing, and content marketing.\n\nWhat to Expect:\n\nDuring this interactive webinar, you'll discover proven strategies for optimizing your online presence and driving measurable results. From enhancing your website's visibility on search engines to creating engaging social media campaigns, you'll gain actionable insights that can elevate your digital marketing game.\n\nWhy Attend:\n\nWhether you're a marketing professional, business owner, or aspiring digital marketer, this webinar offers a valuable opportunity to stay updated with the latest trends and techniques in the field. It's a knowledge-sharing session that empowers you to make informed decisions and excel in the digital realm.\n\nWho Should Attend:\n\n- Marketing professionals\n- Small business owners\n- Individuals interested in digital marketing",
         "button": {
-            "label": "Join Webinar",
+            "label": "View Details",
             "link": "/digital-marketing-webinar-registration"
         },
         "location": "456 Market Ave, Qatar",
@@ -42,7 +42,7 @@
         "shortDescription": "Enhance leadership skills. Effective communication, team management, and decision-making.",
         "eventDetails": "Welcome to our Leadership Training Program, an intensive course designed to transform aspiring leaders into effective, influential professionals. Over the course of five engaging hours, participants will dive deep into the core aspects of leadership, exploring communication strategies, team management techniques, and decision-making frameworks.\n\nWhat to Expect:\n\nThis program is not just a theoretical exploration of leadership concepts; it's a hands-on, interactive experience where participants actively engage in leadership simulations, case studies, and role-playing exercises. You'll learn how to inspire and motivate teams, navigate challenging situations, and make informed decisions that drive organizational success.\n\nWhy Attend:\n\nLeadership is a skill that can be learned and honed. By attending this program, you'll gain practical leadership skills that are applicable in various professional settings. Whether you're a team manager, aspiring executive, or an entrepreneur leading your startup, this program equips you with the tools to lead with confidence and competence.\n\nWho Should Attend:\n\n- Aspiring leaders\n- Team managers\n- Entrepreneurs and business owners",
         "button": {
-            "label": "Enroll Now",
+            "label": "View Details",
             "link": "/leadership-training-registration"
         },
         "location": "789 Business Blvd, Dubai",
@@ -59,7 +59,7 @@
         "shortDescription": "Introduction to data science tools and techniques. Data analysis and visualization.",
         "eventDetails": "Dive into the exciting world of data science at our Data Science Workshop. Over the course of three and a half hours, participants will explore the fundamentals of data science tools and techniques, unraveling the mysteries of data analysis and visualization.\n\nWhat to Expect:\n\nThis workshop is a hands-on experience where participants will work with real datasets, applying statistical methods and visualization tools to gain actionable insights. From data cleaning and preprocessing to advanced visualization techniques, you'll learn how to transform raw data into meaningful narratives that drive informed decision-making.\n\nWhy Attend:\n\nIn today's data-driven world, the ability to derive insights from data is a valuable skill. Whether you're a business professional aiming to harness the power of data for strategic planning or a data enthusiast eager to dive into the world of analytics, this workshop provides a solid foundation. Plus, you'll have the opportunity to interact with fellow data enthusiasts, fostering a collaborative learning environment.\n\nWho Should Attend:\n\n- Business professionals\n- Data analysts\n- Enthusiasts interested in data science",
         "button": {
-            "label": "Book Your Spot",
+            "label": "View Details",
             "link": "/data-science-workshop-registration"
         },
         "location": "101 Tech Lane, Italy",
@@ -76,7 +76,7 @@
         "shortDescription": "Explore the world of graphic design. Tools, techniques, and creative design concepts.",
         "eventDetails": "Immerse yourself in the vibrant realm of graphic design at our Graphic Design Webinar. In this two and a half-hour session, participants will journey through the creative process, exploring the essential tools, techniques, and design concepts that form the foundation of graphic design.\n\nWhat to Expect:\n\nLed by experienced graphic designers, this webinar delves into both the artistic and technical aspects of graphic design. Participants will gain hands-on experience with industry-standard design software, learning how to create visually appealing graphics, illustrations, and layouts. From understanding color theory to mastering typography, you'll acquire the skills to bring your creative visions to life.\n\nWhy Attend:\n\nGraphic design is not just a profession; it's an art form that communicates ideas and emotions visually. Whether you're an aspiring graphic designer, a marketing professional looking to enhance your design skills, or simply someone passionate about creativity, this webinar offers a valuable opportunity to learn from experts and expand your horizons.\n\nWho Should Attend:\n\n- Aspiring graphic designers\n- Marketing and advertising professionals\n- Creative enthusiasts",
         "button": {
-            "label": "Join Webinar",
+            "label": "View Details",
             "link": "/graphic-design-webinar-registration"
         },
         "location": "202 Creativity Street, Singapore",
@@ -93,7 +93,7 @@
         "shortDescription": "Understanding financial markets, investment strategies, and portfolio management.",
         "eventDetails": "Delve into the intricate world of finance and investments at our Finance and Investments Workshop. In this enriching three-hour session, participants will gain a deep understanding of financial markets, investment strategies, and portfolio management techniques.\n\nWhat to Expect:\n\nLed by seasoned financial experts, this workshop covers a wide array of topics, including stock market analysis, investment valuation methods, risk management strategies, and portfolio diversification techniques. Participants will engage in interactive discussions, analyze real market data, and learn how to make informed investment decisions.\n\nWhy Attend:\n\nFinancial literacy is a valuable asset in today's fast-paced world. Whether you're a budding investor, a business professional involved in financial decision-making, or simply an individual eager to grasp the fundamentals of finance, this workshop equips you with the knowledge and skills to navigate the complexities of financial markets.\n\nWho Should Attend:\n\n- Aspiring investors\n- Financial analysts\n- Professionals involved in financial planning",
         "button": {
-            "label": "Register Now",
+            "label": "View Details",
             "link": "/finance-workshop-registration"
         },
         "location": "303 Investment Guru, India",
@@ -110,7 +110,7 @@
         "shortDescription": "Learn from successful entrepreneurs. Business ideas, funding, and growth strategies.",
         "eventDetails": "Welcome to our Entrepreneurship Conference, a day-long immersion into the world of entrepreneurship, innovation, and business growth. This conference is designed for aspiring entrepreneurs, startup founders, and business enthusiasts seeking inspiration and valuable insights from successful industry leaders.\n\nWhat to Expect:\n\nThe conference agenda is packed with engaging sessions featuring renowned entrepreneurs, venture capitalists, and business mentors. Participants will have the opportunity to hear inspiring success stories, gain actionable tips on business idea validation, fundraising, and market penetration, and participate in interactive workshops focusing on essential entrepreneurial skills.\n\nWhy Attend:\n\nEntrepreneurship is not just about starting a business; it's a mindset, a journey of innovation and resilience. By attending this conference, you'll gain a profound understanding of the entrepreneurial ecosystem, connect with potential co-founders or collaborators, and learn from the triumphs and challenges of those who have walked the entrepreneurial path before you.\n\nWho Should Attend:\n\n- Aspiring entrepreneurs\n- Startup founders\n- Investors looking for promising ventures",
         "button": {
-            "label": "Get Your Ticket",
+            "label": "View Details",
             "link": "/entrepreneurship-conference-registration"
         },
         "location": "404 Startup Road, UK",
@@ -127,7 +127,7 @@
         "shortDescription": "Tips for career growth, resume building, and job interview success.",
         "eventDetails": "Embark on a journey of professional growth at our Career Development Seminar. In this three-hour seminar, participants will receive expert guidance on enhancing their careers, building impactful resumes, and mastering the art of successful job interviews.\n\nWhat to Expect:\n\nLed by experienced career coaches and HR professionals, this seminar covers a wide range of topics, including effective networking strategies, resume optimization techniques, interview preparation tips, and negotiation skills. Participants will engage in practical exercises, receive personalized feedback, and gain valuable insights to accelerate their career trajectories.\n\nWhy Attend:\n\nIn today's competitive job market, career development is not just a choice; it's a necessity. Whether you're a recent graduate entering the workforce or a mid-career professional aiming for a career transition, this seminar equips you with the tools and knowledge to navigate the job landscape successfully.\n\nWho Should Attend:\n\n- Job seekers\n- Recent graduates\n- Professionals seeking career advancement",
         "button": {
-            "label": "Join Seminar",
+            "label": "View Details",
             "link": "/career-development-seminar-registration"
         },
         "location": "505 Career Avenue, USA",
@@ -144,7 +144,7 @@
         "shortDescription": "Connect with leading tech companies. Explore job opportunities and network with professionals.",
         "eventDetails": "Don't miss the opportunity to connect with leading tech companies and explore exciting career prospects at our Tech Career Fair. This event provides a platform for job seekers, tech enthusiasts, and professionals to interact with top tech employers, learn about job openings, and network with industry experts.\n\nWhat to Expect:\n\nThe Tech Career Fair features booths from a diverse range of tech companies, from innovative startups to established industry leaders. Attendees can explore job opportunities, submit resumes, and engage in one-on-one discussions with company representatives. Additionally, there will be panel discussions on tech trends, skill development workshops, and opportunities to connect with recruiters.\n\nWhy Attend:\n\nTech Career Fairs are not just about job hunting; they're about building connections and staying updated with industry trends. Whether you're actively seeking a job, exploring career options, or looking to expand your professional network, this event offers a valuable platform to interact with key players in the tech sector.\n\nWho Should Attend:\n\n- Job seekers in the tech industry\n- Tech professionals looking for new opportunities\n- Students pursuing tech-related degrees",
         "button": {
-            "label": "Attend Career Fair",
+            "label": "View Details",
             "link": "/tech-career-fair-registration"
         },
         "location": "606 Tech Plaza, London",
@@ -161,7 +161,7 @@
         "shortDescription": "Explore careers in healthcare. Meet employers, learn about job openings, and connect with experts.",
         "eventDetails": "Discover a world of possibilities in the healthcare industry at our Healthcare Career Fair. Whether you're a healthcare professional looking for new opportunities, a recent graduate exploring career paths, or someone passionate about making a difference in healthcare, this event is your gateway to a multitude of career options.\n\nWhat to Expect:\n\nThe Healthcare Career Fair brings together healthcare providers, hospitals, research institutions, and pharmaceutical companies under one roof. Attendees can explore various roles in healthcare, including nursing, medical research, administration, and patient care. The event features informational booths, networking sessions with industry experts, and seminars on healthcare trends and advancements.\n\nWhy Attend:\n\nThe healthcare sector offers diverse and rewarding career paths, from direct patient care to behind-the-scenes roles in research and management. This fair provides a unique opportunity to gain insights into different healthcare professions, learn about job openings, and connect with professionals who are passionate about making a difference in the lives of others.\n\nWho Should Attend:\n\n- Healthcare professionals\n- Recent graduates in healthcare-related fields\n- Individuals interested in healthcare careers",
         "button": {
-            "label": "Attend Career Fair",
+            "label": "View Details",
             "link": "/healthcare-career-fair-registration"
         },
         "location": "707 Healthtown, Dhaka",

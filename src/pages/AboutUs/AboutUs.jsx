@@ -1,8 +1,9 @@
+import BlogBanner from "../../components/BlogBanner/BlogBanner";
 
 const AboutUs = () => {
     return (
         <div>
-            About Us
+            <BlogBanner></BlogBanner>
         </div>
     );
 };

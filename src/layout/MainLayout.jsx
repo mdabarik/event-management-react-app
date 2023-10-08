@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar/Navbar';
 const MainLayout = () => {
     return (
         <>
-            <div>
+            <div className='w-[100vw]'>
                 <Navbar></Navbar>
                 <div className='absolute top-0 left-0 -z-10'>
                     <Outlet></Outlet>

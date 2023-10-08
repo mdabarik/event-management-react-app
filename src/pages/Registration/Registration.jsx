@@ -2,7 +2,7 @@ import BgImage from "../../components/BgImage/BgImage";
 import LoginBg from "../../assets/login-bg.jpg";
 import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from 'react-icons/fc';
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FirebaseAuthContext } from "../../providers/FirebaseAuthProvider";
 import { sendEmailVerification, updateProfile } from "firebase/auth";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
@@ -13,7 +13,8 @@ const Registration = () => {
 
     const navigate = useNavigate();
     const [errorMessage, setErrorMessage] = useState("");
-    const { createUserNormal, profilePhotoHandler, googleSignIn, profileNameHandler, user } = useContext(FirebaseAuthContext);
+    const { createUserNormal, profilePhotoHandler, googleSignIn, profileNameHandler, user, setLoading, setProfileURL } = useContext(FirebaseAuthContext);
+
 
     if (user !== null) {
         navigate("/");
@@ -27,8 +28,8 @@ const Registration = () => {
             setFile(e.target.files[0]);
     }
 
-    const redirectToLogin = () => {
-        navigate("/login");
+    const redirectToHome = () => {
+        navigate("/");
     }
 
     const handleRegistration = (e) => {
@@ -109,6 +110,7 @@ const Registration = () => {
                     console.log('File available at', downloadURL);
                     setURL(downloadURL)
                     profilePhotoHandler(downloadURL)
+                    setProfileURL(downloadURL)
 
                     createUserNormal(email, password)
                         .then(userCredential => {
@@ -123,6 +125,7 @@ const Registration = () => {
                                     photoUrl: downloadURL
                                 }
                             })
+
 
                             profilePhotoHandler(url);
                             profileNameHandler(name);
@@ -139,11 +142,17 @@ const Registration = () => {
                             //     })
 
                             console.log("Alhamdulillah, Account created successfully")
-                            redirectToLogin();
+                            setLoading(false)
+                            navigate("/");
+
                         })
                         .catch(error => {
-                            const errorMessage = error.message;
-                            setErrorMessage(errorMessage)
+                            if (error.code === "auth/email-already-in-use") {
+                                setErrorMessage("Email already exists");
+                            } else {
+                                setErrorMessage(error.code);
+                            }
+                            setLoading(false)
                         })
 
 
@@ -160,33 +169,23 @@ const Registration = () => {
     const handleGoogleSignedIn = () => {
         googleSignIn()
             .then(res => {
-                const user = res.user;
-
-                console.log(user);
-                const name = user.displayName;
-                const email = user.email;
-                const profile = user.photoURL;
-
-                profilePhotoHandler(profile);
-                profileNameHandler(name);
-                // userHandler(user);
-                navigate("/")
+                // signed in
             })
             .catch(err => {
-                const error = err.message;
+                const error = err.code;
                 setErrorMessage(error);
             })
     }
 
     return (
-        <div className="h-[115vh] w-[100vw] flex items-center justify-center">
+        <div className="h-[130vh] w-[100vw] flex items-center justify-center">
             <BgImage isFull={true} image={LoginBg}></BgImage>
             <div className="flex flex-col justify-center items-center bg-[#ffffff] rounded-lg p-8">
 
                 {/* input form start */}
                 <div className="relative flex flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none">
                     <h4 className="block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
-                        Create new accouont
+                        Create new account
                     </h4>
                     <p className="mt-1 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
                         Enter your details to register.
