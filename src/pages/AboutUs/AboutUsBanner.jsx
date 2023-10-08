@@ -1,19 +1,7 @@
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import Swal from "sweetalert2";
 import AboutUsImg from "../../assets/about-us.jpg";
 import EventBg from '../../components/EventBanner/EventBg';
 
 const AboutUsBanner = () => {
-    const handleClickCTA = () => {
-        Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Thanks for booking this event.',
-            showConfirmButton: false,
-            timer: 1500
-        })
-    }
     return (
         <div className="h-[66vh] w-[100vw] flex items-center justify-center">
             <EventBg image={AboutUsImg}></EventBg>

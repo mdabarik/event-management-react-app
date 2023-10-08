@@ -1,25 +1,20 @@
 import BgImage from "../../components/BgImage/BgImage";
 import LoginBg from "../../assets/login-bg.jpg";
-import { Link, useLocation, useNavigate, useNavigation } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
+import { Link, useNavigate } from "react-router-dom";
 import 'react-toastify/dist/ReactToastify.css';
 import "./Login.css";
 import { FcGoogle } from 'react-icons/fc';
 import { useContext, useEffect } from "react";
 import { FirebaseAuthContext } from "../../providers/FirebaseAuthProvider";
-import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
-import auth from "../../firebase/firebase.config";
-import AOS from 'aos';
 import Footer from "../../components/Footer/Footer";
 
 
-const Login = ({ state }) => {
-    const { user, loginNormal, googleSignIn, handleLoggedInStatus, setLoading } = useContext(FirebaseAuthContext);
+const Login = ({ }) => {
+    const { user, loginNormal, googleSignIn, setLoading } = useContext(FirebaseAuthContext);
     console.log(user);
     useEffect(() => {
-        if (user) return;
-        AOS.init();
+        // if (user) return;
     }, [user])
 
 
@@ -77,19 +72,19 @@ const Login = ({ state }) => {
 
     return (
         <>
-            <div data-aos="zoom-in-up" className="h-[115vh] w-[100vw] flex items-center justify-center -z-50">
+            <div className="h-[115vh] w-[100vw] flex items-center justify-center -z-50">
                 <BgImage className="-z-10" isFull={true} image={LoginBg}></BgImage>
-                <div className="flex flex-col justify-center items-center bg-[#ffffff88] rounded-lg p-8">
+                <div className="flex flex-col m-4 justify-center items-center bg-[#ffffff88] rounded-lg p-8">
 
                     {/* input form start */}
-                    <div data-aos="flip-left" className="relative flex flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none">
+                    <div className="relative flex flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none">
                         <h4 className="block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
                             Login Now
                         </h4>
                         <p className="mt-1 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
                             Enter your details to login.
                         </p>
-                        <form onSubmit={handleLogin} className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96" autoComplete="off" >
+                        <form onSubmit={handleLogin} className="mt-8 p-8 md:p-2 mb-2 w-80 max-w-screen-lg sm:w-96" autoComplete="off" >
                             <div className="mb-4 flex flex-col gap-6">
                                 <div className="relative h-11 w-full min-w-[200px]">
                                     <input

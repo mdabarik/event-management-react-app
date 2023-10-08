@@ -1,35 +1,20 @@
-
-import webinarBg from '../../assets/webinar-bg.jpg';
-import workshopBg from '../../assets/workshop-bg.jpg';
 import "./Home.css";
-
 import "swiper/css";
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import WebinarBanner from '../../components/WebinarBanner/WebinarBanner';
-import WorkshopBanner from '../../components/WorkshopBanner/WorkshopBanner';
-import ContactUsBanner from '../../components/ContactUsBanner/ContactUsBanner';
-import BlogBanner from '../../components/BlogBanner/BlogBanner';
-import CareerFairBanner from '../../components/CareerFairBanner/CareerFairBanner';
 import UpcomingEvents from '../../components/UpcomingEvents/UpcomingEvents';
 import Footer from '../../components/Footer/Footer';
 import Services from '../../components/Services/Services';
 import Testimonials from '../../components/Testimonials/Testimonials';
-import { useLoaderData } from 'react-router-dom';
 import Banner from '../../components/Banner/Banner';
 import { useEffect, useState } from 'react';
-import AOS from 'aos';
-
 
 const Home = () => {
-
     const [services, setServices] = useState([]);
     
     useEffect(() => {
-        AOS.init();
         fetch("../../services.json")
         .then(res => res.json())
         .then(data => {
@@ -37,10 +22,10 @@ const Home = () => {
         })
         .catch()
     }, [])
-
+ 
     return (
         <>
-            <div data-aos="zoom-in" className='w-[100vw] h-[85vh] absolute top-0 left-0 -z-10'>
+            <div className='w-[100vw] h-[85vh] absolute top-0 left-0 -z-10'>
                 <Swiper
                     loop={true}
                     spaceBetween={30}

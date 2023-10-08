@@ -197,7 +197,7 @@ const Registration = () => {
                         <p className="mt-1 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
                             Enter your details to register.
                         </p>
-                        <form onSubmit={handleRegistration} className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96" autoComplete="off" >
+                        <form onSubmit={handleRegistration} className="mt-8 mb-2 max-w-screen-lg sm:w-96" autoComplete="off" >
                             <div className="mb-4 flex flex-col gap-6">
                                 <div className="relative h-11 w-full min-w-[200px]">
                                     <input

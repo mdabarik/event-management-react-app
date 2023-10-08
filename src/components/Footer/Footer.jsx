@@ -9,7 +9,6 @@ import { useEffect } from "react";
 const Footer = () => {
 
     useEffect(() => {
-        AOS.init();
     }, [])
 
     const companyLinks = <>
@@ -31,7 +30,7 @@ const Footer = () => {
     </>
 
     return (
-        <footer data-aos="zoom-in" className="bg-neutral text-neutral-content">
+        <footer className="bg-neutral text-neutral-content">
             <div className="py-10 container mx-auto">
                 <div className="flex flex-col justify-center items-center gap-1">
                     <img className="w-[80px] h-[80px]" src={Logo} alt="logo" />
