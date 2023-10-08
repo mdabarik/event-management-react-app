@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "name": "John Smith",
+        "image": "https://i.ibb.co/zhmtwhH/person1.jpg",
+        "profession": "Software Engineer",
+        "short_biography": "Experienced Software Engineer with a passion for web development."
+    },
+    {
+        "id": 2,
+        "name": "Emily Johnson",
+        "image": "https://i.ibb.co/xXBq8mX/person2.jpg",
+        "profession": "Marketing Manager",
+        "short_biography": "Creative Marketing Manager skilled in crafting compelling campaigns."
+    },
+    {
+        "id": 3,
+        "name": "Michael Davis",
+        "image": "https://i.ibb.co/c197MMV/person3.jpg",
+        "profession": "Graphic Designer",
+        "short_biography": "Talented Graphic Designer with a passion for visually appealing designs."
+    },
+    {
+        "id": 4,
+        "name": "Sarah Martinez",
+        "image": "https://i.ibb.co/wgvwbjn/person4.jpg",
+        "profession": "Data Scientist",
+        "short_biography": "Data Scientist passionate about extracting insights from complex datasets."
+    },
+    {
+        "id": 5,
+        "name": "David Thompson",
+        "image": "https://i.ibb.co/ZzVLKn0/person5.jpg",
+        "profession": "Financial Analyst",
+        "short_biography": "Skilled Financial Analyst experienced in market trend analysis."
+    },
+    {
+        "id": 6,
+        "name": "Emma White",
+        "image": "https://i.ibb.co/2W0Z0tz/132.jpg",
+        "profession": "Content Writer",
+        "short_biography": "Passionate Content Writer skilled in crafting engaging online content."
+    },
+    {
+        "id": 7,
+        "name": "Daniel Lee",
+        "image": "https://i.ibb.co/0MN0ztY/123.jpg",
+        "profession": "Architect",
+        "short_biography": "Innovative Architect known for visionary and sustainable designs."
+    },
+    {
+        "id": 8,
+        "name": "Olivia Adams",
+        "image": "https://i.ibb.co/KDmCVmf/12.jpg",
+        "profession": "Human Resources Manager",
+        "short_biography": "Dedicated HR Manager fostering inclusive workplace culture."
+    }
+]
