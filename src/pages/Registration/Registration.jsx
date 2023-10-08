@@ -2,20 +2,14 @@ import BgImage from "../../components/BgImage/BgImage";
 import LoginBg from "../../assets/login-bg.jpg";
 import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from 'react-icons/fc';
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { FirebaseAuthContext } from "../../providers/FirebaseAuthProvider";
 import { updateProfile } from "firebase/auth";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { storage } from "../../firebase/firebase.config";
 import Footer from "../../components/Footer/Footer";
-import AOS from 'aos';
 
 const Registration = () => {
-
-    useEffect(() => {
-        AOS.init();
-    },[])
-
 
     const navigate = useNavigate();
     const [errorMessage, setErrorMessage] = useState("");
@@ -184,7 +178,7 @@ const Registration = () => {
     }
 
     return (
-        <div data-aos="zoom-out-up">
+        <div>
             <div className="h-[130vh] w-[100vw] flex items-center justify-center">
                 <BgImage isFull={true} image={LoginBg}></BgImage>
                 <div className="flex flex-col justify-center items-center bg-[#ffffff] rounded-lg p-8">

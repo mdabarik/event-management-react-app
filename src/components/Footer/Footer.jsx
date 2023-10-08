@@ -3,14 +3,12 @@ import { FaTwitter } from "react-icons/fa";
 import { BsYoutube } from "react-icons/bs";
 import { BsFacebook } from "react-icons/bs";
 import Logo from "../../assets/logo.png";
-import AOS from 'aos';
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { FirebaseAuthContext } from "../../providers/FirebaseAuthProvider";
 
 const Footer = () => {
 
     const { user } = useContext(FirebaseAuthContext);
-
 
     const socialLinks = <>
         <Link to="#">

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import Footer from "../../components/Footer/Footer";
 import AboutUsBanner from "./AboutUsBanner";
 import AboutUsTeam from "./AboutUsTeam";
-import AOS from 'aos';
 
 const AboutUs = () => {
     const [members, setMembers] = useState([])
