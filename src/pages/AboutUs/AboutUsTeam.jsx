@@ -18,7 +18,7 @@ const AboutUsTeam = ({ member }) => {
         <div className="text-white h-[350px] flex flex-col items-center justify-center rounded-lg relative">
             <img className="w-full h-[350px] object-cover rounded-lg" src={member?.image} alt="img" />
             <div className="absolute top-0 left-0 bg-[#00000090] w-full h-full rounded-lg"></div>
-            <div className="absolute top-0 left-0 h-full flex flex-col items-center justify-center px-8 ">
+            <div className="absolute top-0 left-0 h-full flex w-full flex-col items-center justify-center px-8 ">
                 <img className='w-[75px] md:w-[100px] h-[75px] mb-2 md:h-[100px] object-cover rounded-full' src={member.image} alt={member.name} />
                 <h1 className="font-bold text-[16px] md:text-2xl mb-1 text-center">
                     {member?.name}
