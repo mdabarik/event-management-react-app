@@ -11,7 +11,7 @@ const Services = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        fetch("../services.json")
+        fetch("https://raw.githubusercontent.com/mdabarik/json-data-store/main/services.json")
             .then(res => res.json())
             .then(services => {
                 setServices(services);

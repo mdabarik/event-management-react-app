@@ -5,7 +5,7 @@ const UpcomingEvents = () => {
     const [cards, setCards] = useState([]);
 
     useEffect(() => {
-        fetch("../events.json")
+        fetch("https://github.com/mdabarik/json-data-store/blob/main/events.json")
         .then(res => res.json())
         .then(cards => {
             setCards(cards)

@@ -11,7 +11,7 @@ const Testimonials = () => {
     const [testimonials, setTestimonials] = useState([]);
 
     useEffect(() => {
-        fetch("../testimonials.json")
+        fetch("https://raw.githubusercontent.com/mdabarik/json-data-store/main/testimonials.json")
             .then(res => res.json())
             .then(testimonials => {
                 setTestimonials(testimonials);

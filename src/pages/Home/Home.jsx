@@ -18,7 +18,6 @@ import UpcomingEvents from '../../components/UpcomingEvents/UpcomingEvents';
 import Footer from '../../components/Footer/Footer';
 import Services from '../../components/Services/Services';
 import Testimonials from '../../components/Testimonials/Testimonials';
-import { useLoaderData } from 'react-router-dom';
 import Banner from '../../components/Banner/Banner';
 import { useEffect, useState } from 'react';
 
