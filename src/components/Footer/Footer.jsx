@@ -4,18 +4,13 @@ import { BsYoutube } from "react-icons/bs";
 import { BsFacebook } from "react-icons/bs";
 import Logo from "../../assets/logo.png";
 import AOS from 'aos';
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import { FirebaseAuthContext } from "../../providers/FirebaseAuthProvider";
 
 const Footer = () => {
 
-    useEffect(() => {
-    }, [])
+    const { user } = useContext(FirebaseAuthContext);
 
-    const companyLinks = <>
-        <Link to="/" className="link link-hover">Home</Link>
-        <Link to="/about-us" className="link link-hover">About Us</Link>
-        <Link to="/contact-us" className="link link-hover">Contact Us</Link>
-    </>
 
     const socialLinks = <>
         <Link to="#">
@@ -37,10 +32,17 @@ const Footer = () => {
                     <span>Educational Event</span>
                 </div>
                 <div className="flex items-center justify-center gap-4 mt-4 text-white link">
-                    {
-                        companyLinks
-                    }
+                    <Link to="/" className="link link-hover">Home</Link>
+                    <Link to="/about-us" className="link link-hover">About Us</Link>
+                    <Link to="/contact-us" className="link link-hover">Contact Us</Link>
                 </div>
+                    {
+                        !user ? "" :
+                            <div className="flex items-center justify-center gap-4 mt-4 text-white link">
+                                <Link to="/seminars" className="link link-hover">Seminars</Link>
+                                <Link to="/conferences" className="link link-hover">Conferences</Link>
+                            </div>
+                    }
                 <div className="flex items-center justify-center gap-4 mt-6 text-white link">
                     {
                         socialLinks
@@ -48,7 +50,7 @@ const Footer = () => {
                 </div>
 
             </div>
-        </footer>
+        </footer >
     );
 };
 

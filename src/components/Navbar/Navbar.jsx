@@ -30,6 +30,17 @@ const Navbar = () => {
         <li>
             <NavLink to="/contact-us">Contact Us</NavLink>
         </li>
+        {
+            !user ? "" :
+                <>
+                    <li>
+                        <NavLink to="/conferences">Conferences</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/seminars">Seminars</NavLink>
+                    </li>
+                </>
+        }
     </>
 
 
