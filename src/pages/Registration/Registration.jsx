@@ -175,7 +175,7 @@ const Registration = () => {
 
     const handleGoogleSignedIn = () => {
         googleSignIn()
-            .then(res => {
+            .then(() => {
                 // signed in
                 Swal.fire({
                     position: 'top-end',
@@ -193,7 +193,7 @@ const Registration = () => {
 
     return (
         <div>
-            <div className="h-[130vh] w-[100vw] flex items-center justify-center">
+            <div data-aos="zoom-in" className="h-[130vh] w-[100vw] flex items-center justify-center">
                 <BgImage isFull={true} image={LoginBg}></BgImage>
                 <div className="flex flex-col justify-center items-center bg-[#ffffff] rounded-lg p-8">
 
@@ -325,7 +325,7 @@ const Registration = () => {
                     {/* input form end */}
                 </div>
             </div>
-            <div className="mt-[10vh] w-[100vw]">
+            <div data-aos="zoom-in" className="mt-[10vh] w-[100vw]">
                 <Footer></Footer>
             </div>
         </div>

@@ -89,7 +89,7 @@ const Login = ({ }) => {
 
     return (
         <>
-            <div className="h-[115vh] w-[100vw] flex items-center justify-center -z-50">
+            <div data-aos="zoom-in" className="h-[115vh] w-[100vw] flex items-center justify-center -z-50">
                 <BgImage className="-z-10" isFull={true} image={LoginBg}></BgImage>
                 <div className="flex flex-col m-4 justify-center items-center bg-[#ffffff88] rounded-lg p-8">
 
@@ -199,7 +199,7 @@ const Login = ({ }) => {
                     {/* input form end */}
                 </div>
             </div>
-            <div className="mt-[20vh] w-[100vw]">
+            <div data-aos="zoom-in" className="mt-[20vh] w-[100vw]">
                 <Footer></Footer>
             </div>
         </>

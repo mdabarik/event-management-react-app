@@ -1,6 +1,12 @@
 import { useEffect } from 'react';
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 
 const OurServices = () => {
+    useEffect(() => {
+        AOS.init()
+    }, [])
+
     return (
         <div className="w-[90%] md:w-[100%] my-8">
             <h2 className="font-semibold w-full text-center text-3xl">Our <span className="text-[#db332a]">Services</span></h2>

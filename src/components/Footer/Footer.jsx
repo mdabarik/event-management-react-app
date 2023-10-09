@@ -3,10 +3,15 @@ import { FaTwitter } from "react-icons/fa";
 import { BsYoutube } from "react-icons/bs";
 import { BsFacebook } from "react-icons/bs";
 import Logo from "../../assets/logo.png";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { FirebaseAuthContext } from "../../providers/FirebaseAuthProvider";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Footer = () => {
+    useEffect(() => {
+        AOS.init()
+    }, [])
 
     const { user } = useContext(FirebaseAuthContext);
 

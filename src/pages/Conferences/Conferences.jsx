@@ -20,10 +20,10 @@ const Conferences = () => {
 
     return (
         <div>
-            <div>
+            <div data-aos="zoom-in">
                 <ConferenceBanner></ConferenceBanner>
             </div>
-            <div className="container mx-auto w-[90%] md:[100%] flex items-center justify-center flex-col mt-[50px]">
+            <div data-aos="zoom-in" className="container mx-auto w-[90%] md:[100%] flex items-center justify-center flex-col mt-[50px]">
                 <h2 className="font-semibold w-full text-center text-xl md:text-2xl lg:text-3xl">Our Available <span className="text-[#db332a]">Conferences</span></h2>
                 <p className="text-[8px] md:text-sm w-[80%] flex items-center justify-center my-3 text-center">Connect with Our Team: Building Relationships, One Conversation at a Time</p>
                 <div className="grid grid-cols-1 gap-5">
@@ -34,7 +34,7 @@ const Conferences = () => {
 
                 </div>
             </div>
-            <div className="mt-[10vh] w-[100vw]">
+            <div data-aos="zoom-in" className="mt-[10vh] w-[100vw]">
                 <Footer></Footer>
             </div>
         </div>

@@ -21,7 +21,7 @@ const Services = () => {
     }, [])
 
     return (
-        <div className="container w-[90%] md:w-[100%] mx-auto">
+        <div data-aos="zoom-in"  className="container w-[90%] md:w-[100%] mx-auto">
             <div className="mt-8 flex flex-col items-center justify-center w-[100%]">
                 <h2 className="font-semibold w-full text-center text-xl md:text-2xl lg:text-3xl">Our <span className="text-[#db332a]">Services</span></h2>
                 <p className="text-[8px] md:text-sm flex my-3 text-center">Empowering Growth and Learning Across Industries: <br /> Explore Our Diverse Range of Services</p>
