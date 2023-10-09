@@ -8,6 +8,7 @@ import { updateProfile } from "firebase/auth";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { storage } from "../../firebase/firebase.config";
 import Footer from "../../components/Footer/Footer";
+import Swal from "sweetalert2";
 
 const Registration = () => {
 
@@ -115,6 +116,13 @@ const Registration = () => {
                     createUserNormal(email, password)
                         .then(userCredential => {
                             const user = userCredential.user;
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: 'Account Created Successfully.',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
 
                             // console.log(user);
 
@@ -141,7 +149,6 @@ const Registration = () => {
                             //         console.log(error.message);
                             //     })
 
-                            console.log("Alhamdulillah, Account created successfully")
                             setLoading(false)
                             navigate("/");
 
@@ -170,6 +177,13 @@ const Registration = () => {
         googleSignIn()
             .then(res => {
                 // signed in
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Log In successfull.',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
             })
             .catch(err => {
                 const error = err.code;

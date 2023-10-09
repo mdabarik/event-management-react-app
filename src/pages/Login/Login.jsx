@@ -8,6 +8,7 @@ import { useContext, useEffect } from "react";
 import { FirebaseAuthContext } from "../../providers/FirebaseAuthProvider";
 import { useState } from "react";
 import Footer from "../../components/Footer/Footer";
+import Swal from "sweetalert2";
 
 
 const Login = ({ }) => {
@@ -41,6 +42,15 @@ const Login = ({ }) => {
         setErrorMsg("");
         loginNormal(email, password)
             .then(userCredential => {
+                
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Log In successfull.',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+
                 // loggedin successfull
                 const curUser = userCredential.user;
                 setLoading(false)
@@ -59,6 +69,13 @@ const Login = ({ }) => {
                 const user = res.user;
                 console.log("looged in", user);
                 setLoading(false)
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Log In successfull.',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
                 navigate("/")
 
             })
