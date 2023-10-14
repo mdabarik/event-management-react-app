@@ -1,5 +1,7 @@
 # Features of this react app
 
+- (Live Link) [https://event-management-assignm-ba727.web.app/]
+
 - Feature 1: Registration system. User can register an account in two ways, using Google Sign In OR by providing username, email and password. <br>
 - Feature 2: Login System, User can login to there account. Also they can logout. <br>
 - Feature 3: Single page application. The app will not reload for any route. This app work like a native app. <br>
