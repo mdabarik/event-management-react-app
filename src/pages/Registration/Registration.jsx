@@ -45,7 +45,10 @@ const Registration = () => {
         // reset error
         setErrorMessage("");
         // validation
-        if (password.length < 6) {
+        if (password !== confirm_password) {
+            setErrorMessage("Password and confirm password doesn't match")
+            return;
+        } else if (password.length < 6) {
             setErrorMessage("Password must contains 6 or more characters");
             return;
         } else if (!/[A-Z]/.test(password)) {
@@ -53,9 +56,6 @@ const Registration = () => {
             return;
         } else if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
             setErrorMessage("Password must contain at least 1 special character")
-            return;
-        } else if (password !== confirm_password) {
-            setErrorMessage("Password and confirm password doesn't match")
             return;
         } else if (checked === false) {
             setErrorMessage("Please accept terms and services");
